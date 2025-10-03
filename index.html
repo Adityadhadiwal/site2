@@ -1,0 +1,675 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitGenie - Apka Personal AI Fitness Coach | Home Workout Plans</title>
+    <meta name="description" content="AI fitness coach for Indian lifestyles. Personalized home workout plans. Sirf ₹99/month mein expert guidance." />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; color: #333; overflow-x: hidden;
+        }
+
+        .floating-guarantee {
+            position: fixed; bottom: 20px; right: 20px; z-index: 1000;
+            background: #ff6b6b; color: white; padding: 15px 20px;
+            border-radius: 50px; box-shadow: 0 8px 25px rgba(255,107,107,0.4);
+            animation: bounce 3s infinite; cursor: pointer;
+            font-weight: bold; font-size: 0.9em;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 60px 20px; text-align: center;
+            position: relative; overflow: hidden; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1.5" fill="white" opacity="0.1"/></svg>');
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 3.2em; margin-bottom: 15px; font-weight: 700; line-height: 1.1; }
+        .hero .subtitle { font-size: 1.4em; margin-bottom: 10px; opacity: 0.95; }
+        .hero .description { font-size: 1.1em; margin-bottom: 30px; opacity: 0.9; }
+        
+        .countdown-timer {
+            background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+            padding: 20px; border-radius: 15px; margin: 20px 0;
+            font-size: 1.2em; font-weight: bold;
+        }
+        
+        .timer-display { font-size: 1.5em; color: #ffd93d; margin: 10px 0; }
+        
+        .social-proof {
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+            padding: 20px; border-radius: 15px; margin: 20px 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px;
+        }
+        
+        .stat { text-align: center; }
+        .stat .number { font-size: 2.2em; font-weight: bold; display: block; color: #ffd93d; }
+        .stat .label { font-size: 0.85em; opacity: 0.9; }
+        
+        .cta-button {
+            display: inline-block; background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            color: white; padding: 25px 60px; text-decoration: none; border-radius: 50px;
+            font-size: 1.4em; font-weight: bold; transition: all 0.3s ease;
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
+            position: relative; overflow: hidden; margin: 10px;
+            animation: pulse-cta 3s infinite; cursor: pointer; border: none;
+        }
+        
+        @keyframes pulse-cta {
+            0% { box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5); }
+            50% { box-shadow: 0 15px 45px rgba(255, 107, 107, 0.7); }
+            100% { box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5); }
+        }
+        
+        .cta-button::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before { left: 100%; }
+        .cta-button:hover { transform: translateY(-3px); }
+        
+        .risk-reversal {
+            background: rgba(40, 167, 69, 0.2); border: 2px solid #28a745;
+            padding: 15px; border-radius: 10px; margin: 20px 0;
+            text-align: center; font-weight: bold;
+        }
+        
+        .urgency-banner {
+            background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+            color: white; padding: 12px; text-align: center;
+            font-weight: bold; animation: urgency-pulse 2s infinite;
+            position: sticky; top: 0; z-index: 100;
+        }
+        
+        @keyframes urgency-pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.85; }
+            100% { opacity: 1; }
+        }
+        
+        .problem-section {
+            background: #f8f9fa; padding: 60px 20px; text-align: center;
+        }
+        
+        .problem-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; max-width: 1200px; margin: 40px auto 0;
+        }
+        
+        .problem-card {
+            background: white; padding: 25px; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative; overflow: hidden; transition: transform 0.3s ease;
+        }
+        
+        .problem-card:hover { transform: translateY(-5px); }
+        
+        .problem-card::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+        }
+        
+        .problem-icon { font-size: 2.5em; margin-bottom: 15px; }
+        
+        .transformation-section {
+            padding: 60px 20px; background: white;
+        }
+        
+        .transformation-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; max-width: 1200px; margin: 40px auto 0;
+        }
+        
+        .transformation-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 20px; overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .transformation-card:hover { transform: translateY(-8px); }
+        
+        .transformation-image {
+            width: 100%; height: 160px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1em; font-weight: bold;
+        }
+        
+        .transformation-content { padding: 20px; }
+        .result-highlight { color: #28a745; font-weight: bold; font-size: 1.1em; }
+        
+        .features-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 60px 20px;
+        }
+        
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; max-width: 1200px; margin: 40px auto 0;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+            padding: 30px; border-radius: 20px; text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 3em; margin-bottom: 15px; }
+        
+        .pricing-section { padding: 60px 20px; background: #f8f9fa; }
+        
+        .pricing-cards {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; max-width: 900px; margin: 40px auto 0;
+        }
+        
+        .pricing-card {
+            background: white; border-radius: 25px; padding: 30px;
+            text-align: center; position: relative; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover { transform: translateY(-5px); }
+        
+        .pricing-card.featured {
+            border: 3px solid #ff6b6b; transform: scale(1.02);
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+        }
+        
+        .pricing-card.featured::before {
+            content: '🔥 SABSE POPULAR'; position: absolute;
+            top: -10px; left: 50%; transform: translateX(-50%);
+            background: #ff6b6b; color: white; padding: 8px 25px;
+            border-radius: 20px; font-size: 0.8em; font-weight: bold;
+        }
+        
+        .price { font-size: 3em; font-weight: bold; color: #667eea; margin: 20px 0; }
+        .price-period { font-size: 0.4em; color: #666; }
+        
+        .value-stack {
+            background: #e8f5e8; padding: 15px; border-radius: 10px;
+            margin: 15px 0; border-left: 5px solid #28a745;
+        }
+        
+        .section-title {
+            text-align: center; font-size: 2.5em; margin-bottom: 15px;
+            font-weight: 700; position: relative;
+        }
+        
+        .section-title::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%;
+            transform: translateX(-50%); width: 60px; height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .whatsapp-cta {
+            background: #25D366; color: white; padding: 20px;
+            border-radius: 15px; text-align: center; margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-button {
+            background: white; color: #25D366; padding: 15px 30px;
+            border-radius: 50px; text-decoration: none; font-weight: bold;
+            display: inline-block; margin-top: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-button:hover { transform: scale(1.05); }
+        
+        .trust-badges {
+            display: flex; justify-content: center; align-items: center;
+            gap: 30px; margin: 30px 0; flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            background: rgba(255,255,255,0.1); padding: 10px 20px;
+            border-radius: 25px; font-size: 0.9em; font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero .subtitle { font-size: 1.2em; }
+            .cta-button { font-size: 1.2em; padding: 20px 40px; }
+            .social-proof { grid-template-columns: repeat(2, 1fr); }
+            .pricing-card.featured { transform: none; }
+            .floating-guarantee { bottom: 10px; right: 10px; font-size: 0.8em; }
+        }
+        
+        .testimonial-ticker {
+            background: #fff; border-top: 3px solid #667eea;
+            border-bottom: 3px solid #667eea; padding: 15px 0;
+            overflow: hidden; white-space: nowrap;
+        }
+        
+        .ticker-content {
+            display: inline-block; animation: ticker 30s linear infinite;
+        }
+        
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="urgency-banner" id="urgencyBanner">
+        <span id="urgencyText">⚡ Limited Spots Available! Join India's Growing Fitness Community</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Apna Fitness Journey Shuru Karo - Sustainable Results!</h1>
+            <p class="subtitle">India ka AI coach jo aapke body type aur lifestyle ko samajhkar perfect plan banata hai</p>
+            <p class="description">Join 5,000+ Indians who are making fitness a consistent part of their daily routine</p>
+            
+            <div class="countdown-timer">
+                <div>Special Launch Price - Limited Time! ⏰</div>
+                <div class="timer-display" id="countdown">2 Din 14 Ghante 23 Minute</div>
+            </div>
+            
+            <div class="social-proof">
+                <div class="stat">
+                    <span class="number" data-target="5000">0</span>
+                    <span class="label">Active Users</span>
+                </div>
+                <div class="stat">
+                    <span class="number" data-target="85">0</span>
+                    <span class="label">% Users See Progress</span>
+                </div>
+                <div class="stat">
+                    <span class="number" data-target="15">0</span>
+                    <span class="label">Minutes Daily</span>
+                </div>
+                <div class="stat">
+                    <span class="number" data-target="0">₹</span>
+                    <span class="label">Gym Fees</span>
+                </div>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="trust-badge">✓ 30-Day Trial</div>
+                <div class="trust-badge">✓ Growing Community</div>
+                <div class="trust-badge">✓ No Gym Needed</div>
+            </div>
+            
+            <button class="cta-button" onclick="openTallyForm()">Mera FREE Assessment Abhi Karo</button>
+            
+            <div class="risk-reversal">
+                <strong>💯 TRY RISK-FREE</strong><br>
+                Satisfied nahi hai? We'll work with you or refund within 30 days!
+            </div>
+            
+            <p style="margin-top: 15px; opacity: 0.8;">✓ Instant access ✓ Koi hidden charges nahi ✓ Cancel anytime</p>
+        </div>
+    </section>
+
+    <div class="testimonial-ticker">
+        <div class="ticker-content">
+            "Mumbai ki Priya ne consistent routine maintain kiya • Bangalore ke Rajesh ne home workouts discover kiye • Delhi ki Meera ne family ke saath fitness prioritize kiya • Pune ke Arjun ne budget-friendly coaching paayi •"
+        </div>
+    </div>
+
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">Generic Fitness Plans Se Thak Gaye?</h2>
+            <p style="font-size: 1.2em; text-align: center; color: #666; margin-bottom: 20px;">
+                Many fitness apps fail because they ignore Indian lifestyle realities
+            </p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Mehenge Trainers (₹5000+/month)</h3>
+                    <p>Jo Indian food nahi samajhte, ghar ki space ignore karte hain, aur generic international plans dete hain</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🤯</div>
+                    <h3>Complex Apps & Equipment</h3>
+                    <p>Fancy machines ki zaroorat, complicated interfaces, aur exercises jo chote Indian gharon mein possible hi nahi</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">😩</div>
+                    <h3>One-Size-Fits-All Bakwas</h3>
+                    <p>Same boring plans for everyone - aapka body type, office timing, vegetarian diet sab ignore</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transformation-section">
+        <div class="container">
+            <h2 class="section-title">Real Indians, Real Progress</h2>
+            <p style="text-align: center; font-size: 1.2em; color: #666; margin-bottom: 20px;">
+                Success stories from our growing community
+            </p>
+            
+            <div class="transformation-grid">
+                <div class="transformation-card">
+                    <div class="transformation-image">Priya's Journey</div>
+                    <div class="transformation-content">
+                        <h4>Priya, Software Engineer, Mumbai</h4>
+                        <p class="result-highlight">Consistent progress over 3 months</p>
+                        <p>"Finally mila ek plan jo mere 10-hour work days aur vegetarian diet ke saath kaam karta hai. FitGenie ne realistic expectations set kiye."</p>
+                    </div>
+                </div>
+                
+                <div class="transformation-card">
+                    <div class="transformation-image">Rajesh's Experience</div>
+                    <div class="transformation-content">
+                        <h4>Rajesh, Marketing Manager, Bangalore</h4>
+                        <p class="result-highlight">Building strength gradually</p>
+                        <p>"Dal-rice diet ko optimize karke aur progressive overload follow karke sustainable results mile. Travel schedule ke saath bhi manageable hai."</p>
+                    </div>
+                </div>
+                
+                <div class="transformation-card">
+                    <div class="transformation-image">Meera's Success</div>
+                    <div class="transformation-content">
+                        <h4>Meera, New Mom, Delhi</h4>
+                        <p class="result-highlight">Postpartum fitness recovery</p>
+                        <p>"15-minute workouts baby ke routine ke around fit ho jaate hain. Realistic goals aur proper guidance really helps."</p>
+                    </div>
+                </div>
+                
+                <div class="transformation-card">
+                    <div class="transformation-image">Arjun's Story</div>
+                    <div class="transformation-content">
+                        <h4>Arjun, College Student, Pune</h4>
+                        <p class="result-highlight">Affordable fitness coaching</p>
+                        <p>"Student budget mein premium guidance mil rahi hai. Hostel room mein bhi workouts possible hain!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">FitGenie Indians Ke Liye Kyon Perfect Hai</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🇮🇳</div>
+                    <h3>Indian Lifestyle Focused</h3>
+                    <p>Designed for Indian homes, schedules, and dietary patterns. Understands your atta-dal-sabzi diet aur family dynamics</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>AI That Adapts</h3>
+                    <p>Considers multiple factors: body type, work schedule, food preferences, space constraints, aur cultural needs</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Any Space Works</h3>
+                    <p>6x8 Mumbai apartments se leke shared PG rooms tak. Gym ki zaroorat nahi - just your body aur commitment</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🥗</div>
+                    <h3>Indian Food Integration</h3>
+                    <p>Meal guidance jo aapke existing diet ke saath kaam karta hai. Vegetarian, South Indian, Gujarati - sab covered</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Professional guidance sirf ₹99/month mein. Less than a movie ticket for expert fitness coaching!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Simple Delivery</h3>
+                    <p>Plans delivered via email. No complex apps, minimal data usage, works on any device</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Aaj Hi Shuru Karo Apna Transformation</h2>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>FREE Assessment</h3>
+                    <div class="price">₹0<span class="price-period">/always</span></div>
+                    <ul style="text-align: left; margin: 30px 0;">
+                        <li>✓ Complete fitness assessment</li>
+                        <li>✓ Personalized starter workout plan</li>
+                        <li>✓ Indian meal timing suggestions</li>
+                        <li>✓ WhatsApp community access</li>
+                        <li>✓ Koi credit card nahi chahiye</li>
+                    </ul>
+                    <button class="cta-button" onclick="openTallyForm()">Free Assessment Lo</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Premium Coaching</h3>
+                    <div class="price">₹99<span class="price-period">/mahina</span></div>
+                    <div class="value-stack">
+                        <strong>Total Value: ₹700/month</strong><br>
+                        <small>Aap Pay Karo: ₹99/month (86% savings)</small>
+                    </div>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>✓ Weekly progressive workout plans</li>
+                        <li>✓ Detailed nutrition guidance</li>
+                        <li>✓ Exercise form correction videos</li>
+                        <li>✓ Direct WhatsApp support</li>
+                        <li>✓ Progress tracking & adjustments</li>
+                        <li>✓ Injury modification plans</li>
+                        <li>✓ Travel workout alternatives</li>
+                    </ul>
+                    <button class="cta-button" onclick="showUpgrade()">Premium Trial Shuru Karo</button>
+                    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Pehle free assessment try karo!</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.1em; color: #666;">
+                    Join 5,000+ Indians who are making sustainable fitness progress<br>
+                    Start today - bilkul free mein try karo
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="whatsapp-cta">
+        <h3>Koi Question? Direct Poocho!</h3>
+        <p>Hamara fitness expert available hai WhatsApp pe</p>
+        <a href="https://wa.me/917741071111" class="whatsapp-button" target="_blank">
+            💬 WhatsApp Pe Baat Karo
+        </a>
+    </div>
+
+    <section style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 60px 20px; text-align: center; display: none;" id="upgrade-section">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2>Premium Upgrade Karne Ke Liye Ready Ho?</h2>
+            <p style="font-size: 1.2em; margin: 20px 0;">Weekly personalized plans, nutrition guidance, aur direct support pao</p>
+            
+            <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; margin: 30px 0; text-align: left;">
+                <h3 style="margin-bottom: 20px; text-align: center;">Payment Instructions:</h3>
+                <div style="font-size: 1.1em; line-height: 1.8;">
+                    <p><strong>Step 1:</strong> Koi bhi UPI app se ₹99 pay karo:</p>
+                    <p style="font-size: 1.3em; font-weight: bold; text-align: center; margin: 15px 0; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px;">
+                        UPI ID: 7741071111@ybl
+                    </p>
+                    <p><strong>Step 2:</strong> Payment confirmation ka screenshot lo</p>
+                    <p><strong>Step 3:</strong> Screenshot + apka email address bhejo:</p>
+                    <p style="font-size: 1.3em; font-weight: bold; text-align: center; margin: 15px 0; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px;">
+                        WhatsApp: +91-7741071111
+                    </p>
+                    <p style="text-align: center; margin-top: 20px; font-style: italic;">
+                        2 hours mein upgrade ho jayenge aur apka pehla premium plan mil jayega!
+                    </p>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin-top: 30px;">
+                <h4>Uske Baad Kya Hoga:</h4>
+                <ul style="text-align: left; margin: 15px 0; font-size: 1.1em; line-height: 1.6;">
+                    <li>✓ Instant premium plan delivery</li>
+                    <li>✓ Weekly progressive workouts</li>
+                    <li>✓ Detailed nutrition guidance</li>
+                    <li>✓ Direct WhatsApp support access</li>
+                    <li>✓ Form correction videos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 40px 20px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h3>FitGenie - India Ka AI Fitness Coach</h3>
+            <p style="margin: 20px 0; opacity: 0.8;">
+                Making fitness accessible and sustainable for every Indian
+            </p>
+            <p style="margin: 10px 0;">
+                Support: WhatsApp +91-7741071111 | Email: hello@fitgenie.in
+            </p>
+            <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.6;">
+                © 2024 FitGenie. Made in India with care
+            </p>
+        </div>
+    </footer>
+
+    <div class="floating-guarantee" onclick="openTallyForm()">
+        💯 Try Risk-Free!
+    </div>
+
+    <script>
+        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof
+Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.head.appendChild(s);}
+
+        function openTallyForm() {
+            window.open('https://tally.so/r/3E909l', '_blank');
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_open', {
+                    'event_category': 'engagement',
+                    'event_label': 'quick_assessment'
+                });
+            }
+        }
+
+        function showUpgrade() {
+            document.getElementById('upgrade-section').style.display = 'block';
+            document.getElementById('upgrade-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start).toLocaleString();
+                }
+            }, 16);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const target = parseInt(element.dataset.target);
+                    if (!element.dataset.animated) {
+                        animateCounter(element, target);
+                        element.dataset.animated = 'true';
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll('.stat .number[data-target]').forEach(stat => {
+            observer.observe(stat);
+        });
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const weekend = new Date();
+            weekend.setDate(weekend.getDate() + (7 - weekend.getDay()) % 7 || 7);
+            weekend.setHours(23, 59, 59, 999);
+            
+            const timeLeft = weekend.getTime() - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('countdown').textContent = `${days} Din ${hours} Ghante ${minutes} Minute`;
+            
+            if (timeLeft < 0) {
+                document.getElementById('countdown').textContent = 'Special Offer Active!';
+            }
+        }
+
+        function updateUrgencyBanner() {
+            const messages = [
+                'Join Our Growing Fitness Community Today!',
+                'Limited Time Launch Offer - Join Now!',
+                'Start Your Fitness Journey This Week!'
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('urgencyText').textContent = '⚡ ' + randomMessage;
+        }
+
+        updateCountdown();
+        updateUrgencyBanner();
+        setInterval(updateCountdown, 60000);
+        setInterval(updateUrgencyBanner, 30000);
+
+        if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+            document.addEventListener('mouseleave', function(e) {
+                if (e.clientY <= 0) {
+                    if (!sessionStorage.getItem('exitIntentShown')) {
+                        alert('Wait! Your FREE assessment takes just 60 seconds!');
+                        openTallyForm();
+                        sessionStorage.setItem('exitIntentShown', 'true');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
