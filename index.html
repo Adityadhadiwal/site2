@@ -1,679 +1,1161 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitGenie - Apka Personal AI Fitness Coach | Home Workout Plans</title>
-    <meta name="description" content="AI fitness coach for Indian lifestyles. Personalized home workout plans. Sirf ₹99/month mein expert guidance." />
+    <title>FitGenie - India Ka #1 AI Fitness Coach | Join 5,000+ Indians</title>
+    <meta name="description" content="Personalized fitness coaching designed for Indians. Home workouts, Indian diet plans. ₹599/month. 30-day guarantee." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6; color: #333; overflow-x: hidden;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            line-height: 1.6; color: #1a1a1a; overflow-x: hidden;
+            background: #fff;
         }
 
-        .floating-guarantee {
-            position: fixed; bottom: 20px; right: 20px; z-index: 1000;
-            background: #ff6b6b; color: white; padding: 15px 20px;
-            border-radius: 50px; box-shadow: 0 8px 25px rgba(255,107,107,0.4);
-            animation: bounce 3s infinite; cursor: pointer;
-            font-weight: bold; font-size: 0.9em;
+        /* Announcement Bar */
+        .announcement-bar {
+            background: linear-gradient(90deg, #10b981, #059669);
+            color: white; padding: 12px 20px; text-align: center;
+            font-weight: 600; font-size: 0.9em;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        .announcement-bar .highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px; border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            font-size: 0.85em;
+            color: #6b7280;
         }
         
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .trust-item span {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 60px 20px; text-align: center;
-            position: relative; overflow: hidden; min-height: 100vh;
-            display: flex; align-items: center; justify-content: center;
+            color: white; padding: 80px 20px 60px;
+            position: relative; overflow: hidden;
         }
         
         .hero::before {
             content: '';
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1.5" fill="white" opacity="0.1"/></svg>');
-            animation: float 8s ease-in-out infinite;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
         }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
         
-        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
-        .hero h1 { font-size: 3.2em; margin-bottom: 15px; font-weight: 700; line-height: 1.1; }
-        .hero .subtitle { font-size: 1.4em; margin-bottom: 10px; opacity: 0.95; }
-        .hero .description { font-size: 1.1em; margin-bottom: 30px; opacity: 0.9; }
-        
-        .countdown-timer {
-            background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
-            padding: 20px; border-radius: 15px; margin: 20px 0;
-            font-size: 1.2em; font-weight: bold;
+        .hero-left h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
         
-        .timer-display { font-size: 1.5em; color: #ffd93d; margin: 10px 0; }
-        
-        .social-proof {
-            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-            padding: 20px; border-radius: 15px; margin: 20px 0;
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px;
+        .hero-left .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            line-height: 1.5;
         }
         
-        .stat { text-align: center; }
-        .stat .number { font-size: 2.2em; font-weight: bold; display: block; color: #ffd93d; }
-        .stat .label { font-size: 0.85em; opacity: 0.9; }
-        
-        .cta-button {
-            display: inline-block; background: linear-gradient(45deg, #ff6b6b, #ff4757);
-            color: white; padding: 25px 60px; text-decoration: none; border-radius: 50px;
-            font-size: 1.4em; font-weight: bold; transition: all 0.3s ease;
-            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
-            position: relative; overflow: hidden; margin: 10px;
-            animation: pulse-cta 3s infinite; cursor: pointer; border: none;
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
         }
         
-        @keyframes pulse-cta {
-            0% { box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5); }
-            50% { box-shadow: 0 15px 45px rgba(255, 107, 107, 0.7); }
-            100% { box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5); }
+        .hero-stat {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
-        .cta-button::before {
-            content: ''; position: absolute; top: 0; left: -100%;
+        .hero-stat .number {
+            font-size: 2.5em;
+            font-weight: 800;
+            display: block;
+            color: #fbbf24;
+        }
+        
+        .hero-stat .label {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* Video/Image Placeholder */
+        .hero-right {
+            position: relative;
+        }
+        
+        .video-container {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 9/16;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            border: 3px solid rgba(255,255,255,0.3);
+            position: relative;
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 25px solid #667eea;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            margin-left: 5px;
+        }
+        
+        .video-caption {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        /* CTA Buttons */
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 20px 45px;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
             width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: left 0.5s;
         }
         
-        .cta-button:hover::before { left: 100%; }
-        .cta-button:hover { transform: translateY(-3px); }
-        
-        .risk-reversal {
-            background: rgba(40, 167, 69, 0.2); border: 2px solid #28a745;
-            padding: 15px; border-radius: 10px; margin: 20px 0;
-            text-align: center; font-weight: bold;
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(16,185,129,0.5);
         }
         
-        .urgency-banner {
-            background: linear-gradient(90deg, #ff6b6b, #ffd93d);
-            color: white; padding: 12px; text-align: center;
-            font-weight: bold; animation: urgency-pulse 2s infinite;
-            position: sticky; top: 0; z-index: 100;
+        .cta-primary:hover::before {
+            left: 100%;
         }
         
-        @keyframes urgency-pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.85; }
-            100% { opacity: 1; }
+        .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 15px;
         }
         
-        .problem-section {
-            background: #f8f9fa; padding: 60px 20px; text-align: center;
+        .cta-secondary:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.5);
         }
-        
-        .problem-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px; max-width: 1200px; margin: 40px auto 0;
-        }
-        
-        .problem-card {
-            background: white; padding: 25px; border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative; overflow: hidden; transition: transform 0.3s ease;
-        }
-        
-        .problem-card:hover { transform: translateY(-5px); }
-        
-        .problem-card::before {
-            content: ''; position: absolute; top: 0; left: 0;
-            width: 100%; height: 4px;
-            background: linear-gradient(90deg, #ff6b6b, #ffd93d);
-        }
-        
-        .problem-icon { font-size: 2.5em; margin-bottom: 15px; }
-        
-        .transformation-section {
-            padding: 60px 20px; background: white;
-        }
-        
-        .transformation-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px; max-width: 1200px; margin: 40px auto 0;
-        }
-        
-        .transformation-card {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 20px; overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .transformation-card:hover { transform: translateY(-8px); }
-        
-        .transformation-image {
-            width: 100%; height: 160px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 1em; font-weight: bold;
-        }
-        
-        .transformation-content { padding: 20px; }
-        .result-highlight { color: #28a745; font-weight: bold; font-size: 1.1em; }
-        
-        .features-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 60px 20px;
-        }
-        
-        .features-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px; max-width: 1200px; margin: 40px auto 0;
-        }
-        
-        .feature-card {
-            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-            padding: 30px; border-radius: 20px; text-align: center;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover { transform: translateY(-5px); }
-        .feature-icon { font-size: 3em; margin-bottom: 15px; }
-        
-        .pricing-section { padding: 60px 20px; background: #f8f9fa; }
-        
-        .pricing-cards {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px; max-width: 900px; margin: 40px auto 0;
-        }
-        
-        .pricing-card {
-            background: white; border-radius: 25px; padding: 30px;
-            text-align: center; position: relative; overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .pricing-card:hover { transform: translateY(-5px); }
-        
-        .pricing-card.featured {
-            border: 3px solid #ff6b6b; transform: scale(1.02);
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-        }
-        
-        .pricing-card.featured::before {
-            content: '🔥 SABSE POPULAR'; position: absolute;
-            top: -10px; left: 50%; transform: translateX(-50%);
-            background: #ff6b6b; color: white; padding: 8px 25px;
-            border-radius: 20px; font-size: 0.8em; font-weight: bold;
-        }
-        
-        .price { font-size: 3em; font-weight: bold; color: #667eea; margin: 20px 0; }
-        .price-period { font-size: 0.4em; color: #666; }
-        
-        .value-stack {
-            background: #e8f5e8; padding: 15px; border-radius: 10px;
-            margin: 15px 0; border-left: 5px solid #28a745;
-        }
-        
-        .section-title {
-            text-align: center; font-size: 2.5em; margin-bottom: 15px;
-            font-weight: 700; position: relative;
-        }
-        
-        .section-title::after {
-            content: ''; position: absolute; bottom: -10px; left: 50%;
-            transform: translateX(-50%); width: 60px; height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-        
-        .container { max-width: 1200px; margin: 0 auto; }
-        
-        .whatsapp-cta {
-            background: #25D366; color: white; padding: 20px;
-            border-radius: 15px; text-align: center; margin: 30px 0;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-        }
-        
-        .whatsapp-button {
-            background: white; color: #25D366; padding: 15px 30px;
-            border-radius: 50px; text-decoration: none; font-weight: bold;
-            display: inline-block; margin-top: 10px;
-            transition: transform 0.3s ease;
-        }
-        
-        .whatsapp-button:hover { transform: scale(1.05); }
-        
+
         .trust-badges {
-            display: flex; justify-content: center; align-items: center;
-            gap: 30px; margin: 30px 0; flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
         }
         
         .trust-badge {
-            background: rgba(255,255,255,0.1); padding: 10px 20px;
-            border-radius: 25px; font-size: 0.9em; font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+        
+        .trust-badge::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: rgba(16,185,129,0.3);
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        /* Social Proof Ticker */
+        .live-activity {
+            background: #fff;
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .activity-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .activity-track {
+            display: flex;
+            gap: 40px;
+            animation: scroll 40s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            white-space: nowrap;
+            font-size: 0.95em;
+            color: #4b5563;
+        }
+        
+        .activity-avatar {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .activity-name {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .activity-time {
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 2.8em;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2em;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            border-color: #667eea;
+        }
+        
+        .problem-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.4em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .problem-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Transformation Section */
+        .transformation-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .transformation-card {
+            background: #f9fafb;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .transformation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .transformation-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .verified-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(16,185,129,0.95);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .transformation-content {
+            padding: 25px;
+        }
+        
+        .transformation-content h4 {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .result-highlight {
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .testimonial-text {
+            color: #4b5563;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        
+        .rating {
+            color: #fbbf24;
+            font-size: 1.2em;
+            margin-top: 12px;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .feature-card p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+        
+        .comparison-table {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table .feature-name {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .check-yes {
+            color: #10b981;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .check-no {
+            color: #ef4444;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .highlight-col {
+            background: #f0fdf4;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
+            max-width: 1100px;
+            margin: 60px auto 0;
+        }
+        
+        .pricing-card {
+            background: #f9fafb;
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(102,126,234,0.4);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(16,185,129,0.4);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .pricing-card .price {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin: 20px 0;
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+        
+        .pricing-card .price .currency {
+            font-size: 0.5em;
+            opacity: 0.8;
+        }
+        
+        .pricing-card .price .period {
+            font-size: 0.35em;
+            opacity: 0.7;
+            font-weight: 600;
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .pricing-card li {
+            padding: 12px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            line-height: 1.6;
+        }
+        
+        .pricing-card li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        
+        .pricing-card.featured li::before {
+            color: #fbbf24;
+        }
+        
+        .pricing-card.featured li {
+            color: rgba(255,255,255,0.95);
+        }
+        
+        .pricing-cta {
+            width: 100%;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .pricing-card:not(.featured) .pricing-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 8px 20px rgba(102,126,234,0.3);
+        }
+        
+        .pricing-card.featured .pricing-cta {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .pricing-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+        
+        .money-back {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9em;
+            opacity: 0.8;
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #1f2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5em;
+            color: #667eea;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 30px;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        
+        .final-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .final-cta h2 {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .final-cta p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .urgency-box {
+            background: rgba(239,68,68,0.15);
+            border: 2px solid rgba(239,68,68,0.3);
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin: 30px auto;
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        .urgency-icon {
+            font-size: 2em;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: rgba(255,255,255,0.8);
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .footer-brand p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h4 {
+            color: white;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        .footer-disclaimer {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-size: 0.85em;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        /* Floating Elements */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: bounce-subtle 3s infinite;
+        }
+        
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+        }
+        
+        .floating-whatsapp::before {
+            content: '💬';
+            font-size: 1.8em;
+        }
+        
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .notification-popup {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            z-index: 999;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 280px;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .notification-popup.show {
+            display: block;
+        }
+        
+        .notification-popup .close-notification {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            color: #9ca3af;
+            cursor: pointer;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .notification-content {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        
+        .notification-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .notification-text {
+            flex: 1;
+        }
+        
+        .notification-text .name {
+            font-weight: 700;
+            color: #1f2937;
+            font-size: 0.95em;
+        }
+        
+        .notification-text .action {
+            color: #6b7280;
+            font-size: 0.85em;
+            margin-top: 2px;
+        }
+        
+        .notification-text .time {
+            color: #10b981;
+            font-size: 0.8em;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .video-container {
+                max-width: 100%;
+                aspect-ratio: 16/9;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5em; }
-            .hero .subtitle { font-size: 1.2em; }
-            .cta-button { font-size: 1.2em; padding: 20px 40px; }
-            .social-proof { grid-template-columns: repeat(2, 1fr); }
-            .pricing-card.featured { transform: none; }
-            .floating-guarantee { bottom: 10px; right: 10px; font-size: 0.8em; }
-        }
-        
-        .testimonial-ticker {
-            background: #fff; border-top: 3px solid #667eea;
-            border-bottom: 3px solid #667eea; padding: 15px 0;
-            overflow: hidden; white-space: nowrap;
-        }
-        
-        .ticker-content {
-            display: inline-block; animation: ticker 30s linear infinite;
-        }
-        
-        @keyframes ticker {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-    </style>
-</head>
-<body>
-    <div class="urgency-banner" id="urgencyBanner">
-        <span id="urgencyText">⚡ Limited Spots Available! Join India's Growing Fitness Community</span>
-    </div>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Apna Fitness Journey Shuru Karo - Sustainable Results!</h1>
-            <p class="subtitle">India ka AI coach jo aapke body type aur lifestyle ko samajhkar perfect plan banata hai</p>
-            <p class="description">Join 5,000+ Indians who are making fitness a consistent part of their daily routine</p>
+            .hero-left h1 {
+                font-size: 2.2em;
+            }
             
-            <div class="countdown-timer">
-                <div>Special Launch Price - Limited Time! ⏰</div>
-                <div class="timer-display" id="countdown">2 Din 14 Ghante 23 Minute</div>
-            </div>
+            .hero-left .subtitle {
+                font-size: 1.1em;
+            }
             
-            <div class="social-proof">
-                <div class="stat">
-                    <span class="number" data-target="5000">0</span>
-                    <span class="label">Active Users</span>
-                </div>
-                <div class="stat">
-                    <span class="number" data-target="85">0</span>
-                    <span class="label">% Users See Progress</span>
-                </div>
-                <div class="stat">
-                    <span class="number" data-target="15">0</span>
-                    <span class="label">Minutes Daily</span>
-                </div>
-                <div class="stat">
-                    <span class="number" data-target="0">₹</span>
-                    <span class="label">Gym Fees</span>
-                </div>
-            </div>
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
             
-            <div class="trust-badges">
-                <div class="trust-badge">✓ 30-Day Trial</div>
-                <div class="trust-badge">✓ Growing Community</div>
-                <div class="trust-badge">✓ No Gym Needed</div>
-            </div>
+            .cta-primary {
+                font-size: 1.1em;
+                padding: 18px 35px;
+            }
             
-            <button class="cta-button" onclick="openTallyForm()">Mera FREE Assessment Abhi Karo</button>
+            .cta-secondary {
+                display: none;
+            }
             
-            <div class="risk-reversal">
-                <strong>💯 TRY RISK-FREE</strong><br>
-                Satisfied nahi hai? We'll work with you or refund within 30 days!
-            </div>
+            .section-title {
+                font-size: 2em;
+            }
             
-            <p style="margin-top: 15px; opacity: 0.8;">✓ Instant access ✓ Koi hidden charges nahi ✓ Cancel anytime</p>
-        </div>
-    </section>
-
-    <div class="testimonial-ticker">
-        <div class="ticker-content">
-            "Mumbai ki Priya ne consistent routine maintain kiya • Bangalore ke Rajesh ne home workouts discover kiye • Delhi ki Meera ne family ke saath fitness prioritize kiya • Pune ke Arjun ne budget-friendly coaching paayi •"
-        </div>
-    </div>
-
-    <section class="problem-section">
-        <div class="container">
-            <h2 class="section-title">Generic Fitness Plans Se Thak Gaye?</h2>
-            <p style="font-size: 1.2em; text-align: center; color: #666; margin-bottom: 20px;">
-                Many fitness apps fail because they ignore Indian lifestyle realities
-            </p>
+            .problem-grid,
+            .transformation-grid,
+            .features-grid,
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
             
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">💸</div>
-                    <h3>Mehenge Trainers (₹5000+/month)</h3>
-                    <p>Jo Indian food nahi samajhte, ghar ki space ignore karte hain, aur generic international plans dete hain</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🤯</div>
-                    <h3>Complex Apps & Equipment</h3>
-                    <p>Fancy machines ki zaroorat, complicated interfaces, aur exercises jo chote Indian gharon mein possible hi nahi</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">😩</div>
-                    <h3>One-Size-Fits-All Bakwas</h3>
-                    <p>Same boring plans for everyone - aapka body type, office timing, vegetarian diet sab ignore</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="transformation-section">
-        <div class="container">
-            <h2 class="section-title">Real Indians, Real Progress</h2>
-            <p style="text-align: center; font-size: 1.2em; color: #666; margin-bottom: 20px;">
-                Success stories from our growing community
-            </p>
+            .comparison-table {
+                overflow-x: auto;
+            }
             
-            <div class="transformation-grid">
-                <div class="transformation-card">
-                    <div class="transformation-image">Priya's Journey</div>
-                    <div class="transformation-content">
-                        <h4>Priya, Software Engineer, Mumbai</h4>
-                        <p class="result-highlight">Consistent progress over 3 months</p>
-                        <p>"Finally mila ek plan jo mere 10-hour work days aur vegetarian diet ke saath kaam karta hai. FitGenie ne realistic expectations set kiye."</p>
-                    </div>
-                </div>
-                
-                <div class="transformation-card">
-                    <div class="transformation-image">Rajesh's Experience</div>
-                    <div class="transformation-content">
-                        <h4>Rajesh, Marketing Manager, Bangalore</h4>
-                        <p class="result-highlight">Building strength gradually</p>
-                        <p>"Dal-rice diet ko optimize karke aur progressive overload follow karke sustainable results mile. Travel schedule ke saath bhi manageable hai."</p>
-                    </div>
-                </div>
-                
-                <div class="transformation-card">
-                    <div class="transformation-image">Meera's Success</div>
-                    <div class="transformation-content">
-                        <h4>Meera, New Mom, Delhi</h4>
-                        <p class="result-highlight">Postpartum fitness recovery</p>
-                        <p>"15-minute workouts baby ke routine ke around fit ho jaate hain. Realistic goals aur proper guidance really helps."</p>
-                    </div>
-                </div>
-                
-                <div class="transformation-card">
-                    <div class="transformation-image">Arjun's Story</div>
-                    <div class="transformation-content">
-                        <h4>Arjun, College Student, Pune</h4>
-                        <p class="result-highlight">Affordable fitness coaching</p>
-                        <p>"Student budget mein premium guidance mil rahi hai. Hostel room mein bhi workouts possible hain!"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features-section">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">FitGenie Indians Ke Liye Kyon Perfect Hai</h2>
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🇮🇳</div>
-                    <h3>Indian Lifestyle Focused</h3>
-                    <p>Designed for Indian homes, schedules, and dietary patterns. Understands your atta-dal-sabzi diet aur family dynamics</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>AI That Adapts</h3>
-                    <p>Considers multiple factors: body type, work schedule, food preferences, space constraints, aur cultural needs</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🏠</div>
-                    <h3>Any Space Works</h3>
-                    <p>6x8 Mumbai apartments se leke shared PG rooms tak. Gym ki zaroorat nahi - just your body aur commitment</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🥗</div>
-                    <h3>Indian Food Integration</h3>
-                    <p>Meal guidance jo aapke existing diet ke saath kaam karta hai. Vegetarian, South Indian, Gujarati - sab covered</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Affordable Pricing</h3>
-                    <p>Professional guidance sirf ₹99/month mein. Less than a movie ticket for expert fitness coaching!</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Simple Delivery</h3>
-                    <p>Plans delivered via email. No complex apps, minimal data usage, works on any device</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing-section">
-        <div class="container">
-            <h2 class="section-title">Aaj Hi Shuru Karo Apna Transformation</h2>
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
             
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3>FREE Assessment</h3>
-                    <div class="price">₹0<span class="price-period">/always</span></div>
-                    <ul style="text-align: left; margin: 30px 0;">
-                        <li>✓ regional language</li>
-                        <li>✓ Complete fitness assessment</li>
-                        <li>✓ Personalized starter workout plan</li>
-                        <li>✓ Indian meal timing suggestions</li>
-                        <li>✓ WhatsApp community access</li>
-                        <li>✓ Koi credit card nahi chahiye</li>
-                    </ul>
-                    <button class="cta-button" onclick="openTallyForm()">Free Assessment Lo</button>
-                </div>
-                
-                <div class="pricing-card featured">
-                    <h3>Premium Coaching</h3>
-                    <div class="price">₹99<span class="price-period">/mahina</span></div>
-                    
-                    <ul style="text-align: left; margin: 20px 0;">
-    <li>✓ Weekly progressive workout plans tailored to YOUR progress</li>
-    <li>✓ regional language</li>
-    <li>✓ Detailed nutrition guidance for Indian meals (dal, rice, roti optimization)</li>
-    <li>✓ Exercise form correction videos to prevent injuries</li>
-    <li>✓ Direct WhatsApp support - real humans, not bots</li>
-    <li>✓ Progress tracking with weekly adjustments based on YOUR results</li>
-    <li>✓ Injury modification plans - workout even when recovering</li>
-    <li>✓ Travel workout alternatives - business trips won't break your routine</li>
-    <li>✓ Festival & wedding season modifications - enjoy life guilt-free</li>
-    <li>✓ Portion control guides for common Indian dishes</li>
-    <li>✓ 15-minute express workouts for busy days</li>
-    <li>✓ Family-friendly exercises you can do with kids around</li>
-    <li>✓ Monthly progress review calls with fitness coach</li>
-</ul>
-                    <button class="cta-button" onclick="showUpgrade()">Premium Trial Shuru Karo</button>
-                    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Pehle free assessment try karo!</p>
-                </div>
-            </div>
+            .notification-popup {
+                bottom: 90px;
+                right: 20px;
+                max-width: 250px;
+            }
             
-            <div style="text-align: center; margin-top: 40px;">
-                <p style="font-size: 1.1em; color: #666;">
-                    Join 5,000+ Indians who are making sustainable fitness progress<br>
-                    Start today - bilkul free mein try karo
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <div class="whatsapp-cta">
-        <h3>Koi Question? Direct Poocho!</h3>
-        <p>Hamara fitness expert available hai WhatsApp pe</p>
-        <a href="https://wa.me/917741071111" class="whatsapp-button" target="_blank">
-            💬 WhatsApp Pe Baat Karo
-        </a>
-    </div>
-
-    <section style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 60px 20px; text-align: center; display: none;" id="upgrade-section">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2>Premium Upgrade Karne Ke Liye Ready Ho?</h2>
-            <p style="font-size: 1.2em; margin: 20px 0;">Weekly personalized plans, nutrition guidance, aur direct support pao</p>
+            .final-cta h2 {
+                font-size: 2em;
+            }
             
-            <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; margin: 30px 0; text-align: left;">
-                <h3 style="margin-bottom: 20px; text-align: center;">Payment Instructions:</h3>
-                <div style="font-size: 1.1em; line-height: 1.8;">
-                    <p><strong>Step 1:</strong> Koi bhi UPI app se ₹99 pay karo:</p>
-                    <p style="font-size: 1.3em; font-weight: bold; text-align: center; margin: 15px 0; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px;">
-                        UPI ID: 7741071111@ybl
-                    </p>
-                    <p><strong>Step 2:</strong> Payment confirmation ka screenshot lo</p>
-                    <p><strong>Step 3:</strong> Screenshot + apka email address bhejo:</p>
-                    <p style="font-size: 1.3em; font-weight: bold; text-align: center; margin: 15px 0; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px;">
-                        WhatsApp: +91-7741071111
-                    </p>
-                    <p style="text-align: center; margin-top: 20px; font-style: italic;">
-                        2 hours mein upgrade ho jayenge aur apka pehla premium plan mil jayega!
-                    </p>
-                </div>
-            </div>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin-top: 30px;">
-                <h4>Uske Baad Kya Hoga:</h4>
-                <ul style="text-align: left; margin: 15px 0; font-size: 1.1em; line-height: 1.6;">
-                    <li>✓ Instant premium plan delivery</li>
-                    <li>✓ Weekly progressive workouts</li>
-                    <li>✓ Detailed nutrition guidance</li>
-                    <li>✓ Direct WhatsApp support access</li>
-                    <li>✓ Form correction videos</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background: #2c3e50; color: white; text-align: center; padding: 40px 20px;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h3>FitGenie - India Ka AI Fitness Coach</h3>
-            <p style="margin: 20px 0; opacity: 0.8;">
-                Making fitness accessible and sustainable for every Indian
-            </p>
-            <p style="margin: 10px 0;">
-                Support: WhatsApp +91-7741071111 | Email: adiifitsquad@gmail.com
-            </p>
-            <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.6;">
-                © 2024 FitGenie. Made in India with care
-            </p>
-        </div>
-    </footer>
-
-    <div class="floating-guarantee" onclick="openTallyForm()">
-        💯 Try Risk-Free!
-    </div>
-
-    <script>
-        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof
-Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.head.appendChild(s);}
-
-        function openTallyForm() {
-            window.open('https://tally.so/r/3E909l', '_blank');
-            
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_open', {
-                    'event_category': 'engagement',
-                    'event_label': 'quick_assessment'
-                });
+            .pricing-card.featured {
+                transform: none;
             }
         }
-
-        function showUpgrade() {
-            document.getElementById('upgrade-section').style.display = 'block';
-            document.getElementById('upgrade-section').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target.toLocaleString();
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start).toLocaleString();
-                }
-            }, 16);
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const element = entry.target;
-                    const target = parseInt(element.dataset.target);
-                    if (!element.dataset.animated) {
-                        animateCounter(element, target);
-                        element.dataset.animated = 'true';
-                    }
-                }
-            });
-        });
-
-        document.querySelectorAll('.stat .number[data-target]').forEach(stat => {
-            observer.observe(stat);
-        });
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const weekend = new Date();
-            weekend.setDate(weekend.getDate() + (7 - weekend.getDay()) % 7 || 7);
-            weekend.setHours(23, 59, 59, 999);
-            
-            const timeLeft = weekend.getTime() - now;
-            
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            
-            document.getElementById('countdown').textContent = `${days} Din ${hours} Ghante ${minutes} Minute`;
-            
-            if (timeLeft < 0) {
-                document.getElementById('countdown').textContent = 'Special Offer Active!';
-            }
-        }
-
-        function updateUrgencyBanner() {
-            const messages = [
-                'Join Our Growing Fitness Community Today!',
-                'Limited Time Launch Offer - Join Now!',
-                'Start Your Fitness Journey This Week!'
-            ];
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            document.getElementById('urgencyText').textContent = '⚡ ' + randomMessage;
-        }
-
-        updateCountdown();
-        updateUrgencyBanner();
-        setInterval(updateCountdown, 60000);
-        setInterval(updateUrgencyBanner, 30000);
-
-        if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-            document.addEventListener('mouseleave', function(e) {
-                if (e.clientY <= 0) {
-                    if (!sessionStorage.getItem('exitIntentShown')) {
-                        alert('Wait! Your FREE assessment takes just 60 seconds!');
-                        openTallyForm();
-                        sessionStorage.setItem('exitIntentShown', 'true');
-                    }
-                }
-            });
-        }
-    </script>
-</body>
-</html>
