@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitGenie - Lose Weight at Home Without Gym | Made for Indians</title>
-    <meta name="description" content="Personalized fitness coaching for Indians. Home workouts, Indian diet plans. ₹599/month. Join 5,000+ Indians. 30-day guarantee." />
+    <title>FitGenie - Home Fitness Coach for Indians | Start FREE</title>
+    <meta name="description" content="Personal fitness coaching for busy Indians. Home workouts + Indian diet plans. No gym, no equipment. ₹999/month. Start with FREE trial." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -18,25 +18,18 @@
         }
 
         .announcement-bar {
-            background: linear-gradient(90deg, #f59e0b, #d97706);
-            color: white; padding: 10px 20px; text-align: center;
-            font-weight: 600; font-size: 0.85em;
+            background: linear-gradient(90deg, #10b981, #059669);
+            color: white; padding: 12px 20px; text-align: center;
+            font-weight: 600; font-size: 0.9em;
             position: sticky; top: 0; z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .announcement-bar .highlight {
             background: rgba(255,255,255,0.25);
-            padding: 2px 8px; border-radius: 4px;
+            padding: 2px 10px; border-radius: 4px;
             margin: 0 5px;
-        }
-
-        #countdown {
-            display: inline-block;
             font-weight: 800;
-            background: rgba(239,68,68,0.2);
-            padding: 2px 8px;
-            border-radius: 4px;
         }
 
         .trust-bar {
@@ -48,7 +41,7 @@
             align-items: center;
             gap: 30px;
             flex-wrap: wrap;
-            font-size: 0.8em;
+            font-size: 0.85em;
             color: #6b7280;
         }
         
@@ -130,48 +123,24 @@
             margin-top: 5px;
         }
 
-        .email-capture {
-            max-width: 500px;
-            margin: 35px auto 0;
-            background: rgba(255,255,255,0.95);
-            padding: 8px;
-            border-radius: 50px;
-            display: flex;
-            gap: 8px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .email-capture input {
-            flex: 1;
-            border: none;
-            padding: 18px 25px;
-            border-radius: 50px;
-            font-size: 1em;
-            outline: none;
-            color: #1f2937;
-        }
-
-        .email-capture input::placeholder {
-            color: #9ca3af;
-        }
-
-        .email-capture button {
+        .cta-button-large {
+            display: inline-block;
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-            border: none;
-            padding: 18px 35px;
-            border-radius: 50px;
+            padding: 20px 45px;
+            border-radius: 12px;
             font-weight: 700;
-            font-size: 1em;
+            font-size: 1.2em;
             cursor: pointer;
             transition: all 0.3s ease;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(16,185,129,0.4);
+            border: none;
+            box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+            margin-top: 20px;
         }
 
-        .email-capture button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16,185,129,0.5);
+        .cta-button-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(16,185,129,0.5);
         }
 
         .trust-badges {
@@ -203,81 +172,56 @@
             font-weight: bold;
         }
 
-        .social-proof-bar {
-            text-align: center;
-            margin-top: 20px;
-            padding: 12px 20px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            display: inline-block;
-            font-size: 0.9em;
+        .founder-section {
+            padding: 60px 20px;
+            background: white;
         }
 
-        .social-proof-bar strong {
-            color: #fbbf24;
-            font-weight: 800;
-        }
-
-        .live-activity {
-            background: #fff;
-            padding: 18px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .activity-container {
-            max-width: 1200px;
+        .founder-box {
+            max-width: 800px;
             margin: 0 auto;
-            overflow: hidden;
-        }
-        
-        .activity-track {
+            background: #f9fafb;
+            border-radius: 20px;
+            padding: 40px;
             display: flex;
-            gap: 40px;
-            animation: scroll 40s linear infinite;
-        }
-        
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        .activity-item {
-            display: flex;
+            gap: 30px;
             align-items: center;
-            gap: 12px;
-            white-space: nowrap;
-            font-size: 0.9em;
-            color: #4b5563;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
-        
-        .activity-avatar {
-            width: 32px;
-            height: 32px;
+
+        .founder-avatar {
+            width: 120px;
+            height: 120px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 50%;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 3em;
             color: white;
-            font-weight: 600;
-            flex-shrink: 0;
-            font-size: 0.9em;
         }
-        
-        .activity-name {
-            font-weight: 600;
+
+        .founder-content h3 {
+            font-size: 1.5em;
             color: #1f2937;
+            margin-bottom: 8px;
         }
-        
-        .activity-time {
-            color: #10b981;
-            font-weight: 500;
+
+        .founder-content .credentials {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .founder-content p {
+            color: #4b5563;
+            line-height: 1.7;
         }
 
         .how-it-works {
             padding: 60px 20px;
-            background: white;
+            background: #f9fafb;
         }
 
         .container {
@@ -329,6 +273,8 @@
         .step-card {
             text-align: center;
             padding: 30px 20px;
+            background: white;
+            border-radius: 16px;
         }
 
         .step-number {
@@ -359,7 +305,7 @@
 
         .problem-section {
             padding: 60px 20px;
-            background: #f9fafb;
+            background: white;
         }
 
         .problem-grid {
@@ -369,7 +315,7 @@
         }
         
         .problem-card {
-            background: white;
+            background: #f9fafb;
             padding: 30px;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -401,140 +347,56 @@
             line-height: 1.7;
         }
 
-        .transformation-section {
+        .benefits-section {
             padding: 60px 20px;
-            background: white;
-        }
-        
-        .transformation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-        
-        .transformation-card {
             background: #f9fafb;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        
-        .transformation-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 50px auto 0;
         }
-        
-        .transformation-image {
-            width: 100%;
-            height: 160px;
+
+        .benefit-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1em;
-            font-weight: 700;
-            position: relative;
-        }
-        
-        .verified-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(16,185,129,0.95);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.7em;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-        
-        .transformation-content {
-            padding: 20px;
-        }
-        
-        .transformation-content h4 {
-            font-size: 1.05em;
-            color: #1f2937;
-            margin-bottom: 6px;
-            font-weight: 700;
-        }
-        
-        .result-highlight {
-            color: #10b981;
-            font-weight: 700;
-            font-size: 1em;
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .testimonial-text {
-            color: #4b5563;
-            line-height: 1.6;
-            font-style: italic;
-            font-size: 0.95em;
-        }
-        
-        .rating {
-            color: #fbbf24;
-            font-size: 1.1em;
-            margin-top: 10px;
+            font-size: 1.5em;
+            flex-shrink: 0;
         }
 
-        .features-section {
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            color: white;
+        .benefit-content h4 {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 5px;
         }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-        
-        .feature-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: #667eea;
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .feature-card p {
-            color: rgba(255,255,255,0.8);
-            line-height: 1.6;
+
+        .benefit-content p {
+            color: #6b7280;
             font-size: 0.95em;
+            line-height: 1.5;
         }
 
         .comparison-section {
             padding: 60px 20px;
-            background: #f9fafb;
+            background: white;
         }
         
         .comparison-table {
@@ -592,7 +454,7 @@
 
         .pricing-section {
             padding: 60px 20px;
-            background: white;
+            background: #f9fafb;
         }
         
         .pricing-cards {
@@ -604,7 +466,7 @@
         }
         
         .pricing-card {
-            background: #f9fafb;
+            background: white;
             border-radius: 24px;
             padding: 35px;
             position: relative;
@@ -763,7 +625,7 @@
 
         .faq-section {
             padding: 60px 20px;
-            background: #f9fafb;
+            background: white;
         }
         
         .faq-container {
@@ -772,7 +634,7 @@
         }
         
         .faq-item {
-            background: white;
+            background: #f9fafb;
             border-radius: 12px;
             margin-bottom: 15px;
             overflow: hidden;
@@ -796,7 +658,7 @@
         }
         
         .faq-question:hover {
-            background: #f9fafb;
+            background: #f3f4f6;
         }
         
         .faq-question::after {
@@ -1042,6 +904,9 @@
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1085,22 +950,6 @@
                 font-size: 0.75em;
             }
 
-            .email-capture {
-                flex-direction: column;
-                padding: 12px;
-                border-radius: 16px;
-            }
-
-            .email-capture input {
-                padding: 16px 20px;
-                border-radius: 12px;
-            }
-
-            .email-capture button {
-                padding: 16px;
-                border-radius: 12px;
-            }
-
             .trust-badges {
                 font-size: 0.85em;
             }
@@ -1118,14 +967,22 @@
                 gap: 25px;
             }
             
-            .problem-grid,
-            .transformation-grid,
-            .features-grid {
+            .problem-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .founder-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
             }
 
             .pricing-cards {
                 grid-template-columns: 1fr;
+            }
+
+            .pricing-card {
+                margin-bottom: 20px;
             }
 
             .pricing-card.featured {
@@ -1183,42 +1040,454 @@
 </head>
 <body>
     <div class="announcement-bar">
-        ⚡ Offer Ends in <span id="countdown">23:59:45</span> - Limited Spots: Only <span class="highlight">17 Left</span>!
+        🎉 <span class="highlight">Launch Offer</span> - Save ₹200 on your first month! Limited time only.
     </div>
 
     <div class="trust-bar">
-        <div class="trust-item">✓ <span>5,000+</span> Happy Users</div>
-        <div class="trust-item">✓ <span>4.8★</span> Rating</div>
-        <div class="trust-item">✓ <span>30-Day</span> Guarantee</div>
+        <div class="trust-item">✓ <span>Made for Indians</span></div>
+        <div class="trust-item">✓ <span>No Gym Needed</span></div>
+        <div class="trust-item">✓ <span>30-Day Guarantee</span></div>
     </div>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Lose Weight at Home Without Gym 🏠</h1>
-            <p class="subtitle">Personal AI fitness coach for Indians. Home workouts + Indian diet plans. Just 15 minutes daily - no equipment needed!</p>
+            <h1>Get Fit at Home - No Gym Needed 🏠</h1>
+            <p class="subtitle">Personal fitness coaching designed for busy Indians. Home workouts + Indian diet plans. Just 15 minutes daily!</p>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="number">5K+</span>
-                    <span class="label">Active Users</span>
+                    <span class="number">15</span>
+                    <span class="label">Min Daily</span>
                 </div>
+                <div class="hero-stat">
+                    <span class="number">₹33</span>
+                    <span class="label">Per Day</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">0</span>
+                    <span class="label">Equipment</span>
+                </div>
+            </div>
+
+            <button class="cta-button-large" onclick="openTallyForm()">
+                Start FREE Assessment →
+            </button>
+
+            <div class="trust-badges">
+                <div class="trust-badge">No credit card required</div>
+                <div class="trust-badge">Cancel anytime</div>
+                <div class="trust-badge">100% Indian focused</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="founder-section">
+        <div class="container">
+            <div class="founder-box">
+                <img src="founder-photo.jpg" alt="Founder" class="founder-avatar" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;">
+                <div class="founder-content">
+                    <h3>Built by Fitness Enthusiasts, For Indians</h3>
+                    <p class="credentials">Certified Fitness Coaches • Nutrition Advisors</p>
+                    <p>We started FitGenie because we struggled with the same problems - expensive gyms, foreign diet plans that don't work with roti-dal, and no time to commute. After helping friends and family get fit at home, we decided to make it accessible to all Indians. Real coaches, real results, honest pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">How It Works</span>
+                <h2 class="section-title">Simple 3-Step Process</h2>
+                <p class="section-subtitle">Get started in minutes - no complicated setup needed</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>FREE Assessment</h3>
+                    <p>Take our 2-minute questionnaire. Tell us your goals, fitness level, available time, and diet preferences. Completely free, no credit card needed.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Get Your Plan</h3>
+                    <p>Receive a personalized workout and meal timing guide via email and WhatsApp. Designed specifically for your Indian lifestyle and home space.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Start Training</h3>
+                    <p>Follow your daily 15-30 min workouts at home. Track progress, get weekly updates, and direct support from your coach whenever needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Problem</span>
+                <h2 class="section-title">Why Traditional Fitness Doesn't Work</h2>
+                <p class="section-subtitle">Sound familiar?</p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <span class="problem-icon">💸</span>
+                    <h3>Expensive Gyms</h3>
+                    <p>₹5,000-15,000/month for membership. Personal trainers cost ₹10,000+ extra. Plus enrollment fees, maintenance charges. Most can't sustain this.</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">🕐</span>
+                    <h3>No Time</h3>
+                    <p>Long work hours, family commitments, commute time. By the time you reach gym and return, 2+ hours gone. Exhausting and unsustainable.</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">🥘</span>
+                    <h3>Foreign Diet Plans</h3>
+                    <p>Chicken breast, quinoa, protein shakes? Doesn't work with Indian food culture. Need guidance that respects your roti-dal-sabzi lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why FitGenie</span>
+                <h2 class="section-title">Built for Indian Lifestyle</h2>
+                <p class="section-subtitle">Everything you need, nothing you don't</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🇮🇳</div>
+                    <div class="benefit-content">
+                        <h4>100% Indian Focused</h4>
+                        <p>Works with your existing diet - veg, non-veg, regional cuisines. Understands family dynamics and Indian home setups.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏠</div>
+                    <div class="benefit-icon">🏠</div>
+                    <div class="benefit-content">
+                        <h4>Home Workouts Only</h4>
+                        <p>6x6 feet space is enough. Mumbai flat, PG room, anywhere. No equipment needed, just your body weight.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏱️</div>
+                    <div class="benefit-content">
+                        <h4>15 Minutes Daily</h4>
+                        <p>Short, effective workouts that fit your schedule. Morning, evening, lunch break - your choice. Consistency over duration.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-content">
+                        <h4>Actually Affordable</h4>
+                        <p>₹999/month (₹33/day). Less than one movie ticket. Professional coaching accessible to everyone.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <div class="benefit-content">
+                        <h4>WhatsApp + Email</h4>
+                        <p>No complicated apps. Plans delivered via WhatsApp and email. Works on any phone, low data usage.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">👨‍🏫</div>
+                    <div class="benefit-content">
+                        <h4>Real Human Coaches</h4>
+                        <p>Talk directly to certified coaches. Not bots. Get personalized advice, form corrections, and motivation.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <div class="benefit-content">
+                        <h4>Safety First</h4>
+                        <p>Injury prevention focus. Proper form tutorials. Modifications for all fitness levels. Start slow, progress safely.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌐</div>
+                    <div class="benefit-content">
+                        <h4>Regional Languages</h4>
+                        <p>Support in Hindi, English, Hinglish. More regional languages coming soon based on demand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Comparison</span>
+                <h2 class="section-title">FitGenie vs Alternatives</h2>
+                <p class="section-subtitle">See what makes us different</p>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight-col">FitGenie</th>
+                            <th>Gym + Trainer</th>
+                            <th>Fitness Apps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Monthly Cost</td>
+                            <td class="highlight-col"><strong>₹999</strong></td>
+                            <td>₹15,000+</td>
+                            <td>₹1,500-3,000</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Indian Diet Focus</td>
+                            <td class="highlight-col"><span class="check-yes">✓</span></td>
+                            <td><span class="check-no">✗</span></td>
+                            <td><span class="check-no">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Works at Home</td>
+                            <td class="highlight-col"><span class="check-yes">✓</span></td>
+                            <td><span class="check-no">✗</span></td>
+                            <td><span class="check-yes">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Personal Coach</td>
+                            <td class="highlight-col"><span class="check-yes">✓</span></td>
+                            <td><span class="check-yes">✓</span></td>
+                            <td><span class="check-no">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Equipment Needed</td>
+                            <td class="highlight-col">None</td>
+                            <td>All gym equipment</td>
+                            <td>Some</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Time Required</td>
+                            <td class="highlight-col">15-30 min</td>
+                            <td>2+ hours (with travel)</td>
+                            <td>30-60 min</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Flexibility</td>
+                            <td class="highlight-col">Anytime, anywhere</td>
+                            <td>Fixed timings</td>
+                            <td>Flexible</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Cancel Anytime</td>
+                            <td class="highlight-col"><span class="check-yes">✓</span></td>
+                            <td><span class="check-no">✗</span> (Annual lock)</td>
+                            <td><span class="check-yes">✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Pricing</span>
+                <h2 class="section-title">Simple, Honest Pricing</h2>
+                <p class="section-subtitle">Try free, upgrade when ready. No hidden charges.</p>
+            </div>
+
+            <div class="pricing-cards" style="grid-template-columns: 1fr 1fr 1fr; max-width: 1100px;">
+                <div class="pricing-card">
+                    <h3>FREE Trial</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>0
+                        <span class="period">/one-time</span>
+                    </div>
+                    <p class="price-detail">Try before you commit!</p>
+                    <ul>
+                        <li>Complete fitness assessment</li>
+                        <li>ONE personalized workout plan</li>
+                        <li>Basic meal timing guide</li>
+                        <li>Exercise demo videos</li>
+                        <li>Community access</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openTallyForm()">Start FREE Trial</button>
+                    <p class="money-back">⚠️ No credit card required</p>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">⚡ MOST POPULAR</div>
+                    <h3>Basic Plan</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>599
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="price-detail">₹20/day - Best for beginners!</p>
+                    <ul>
+                        <li>Weekly updated workout plans</li>
+                        <li>Indian meal timing guidance</li>
+                        <li>Email support (48hr response)</li>
+                        <li>Progress tracking templates</li>
+                        <li>Form correction videos</li>
+                        <li>Exercise modifications</li>
+                        <li>Monthly progress review</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openTallyForm()">Get Basic Plan</button>
+                    <p class="money-back">💯 30-Day Money Back</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Premium Coaching</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>999
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="price-detail">₹33/day - For serious results</p>
+                    <ul>
+                        <li><strong>Everything in Basic, PLUS:</strong></li>
+                        <li>Complete Indian nutrition plan</li>
+                        <li>Direct WhatsApp coach access</li>
+                        <li>24hr response time</li>
+                        <li>Personalized form corrections</li>
+                        <li>Injury-specific modifications</li>
+                        <li>Travel & festival adaptations</li>
+                        <li>Bi-weekly video check-ins</li>
+                        <li>Regional language support</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openTallyForm()">Get Premium</button>
+                    <p class="money-back">💯 30-Day Money Back</p>
+                </div>
+            </div>
+
+            <div class="guarantee-box">
+                <h4>🛡️ 100% Risk-Free Guarantee</h4>
+                <p>Try Premium for 30 days. If you're not satisfied for ANY reason, we'll refund every rupee. No questions asked. We're confident you'll love it.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQs</span>
+                <h2 class="section-title">Common Questions</h2>
+                <p class="section-subtitle">Everything you need to know</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        I'm a complete beginner. Will this work for me?
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! Most of our members are beginners. We start with basics and progress gradually. You'll learn proper form, build strength slowly, and avoid injuries. No judgement, just consistent progress.
+                    </div>
+                </div>
+
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Do I need any equipment?
+                    </div>
+                    <div class="faq-answer">
+                        No! All exercises use your body weight. You just need a 6x6 feet space. If you have dumbbells or resistance bands, great - but they're not required.
+                    </div>
+                </div>
+
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        How quickly will I see results?
+                    </div>
+                    <div class="faq-answer">
+                        Results vary by person. Generally, you'll feel more energetic in 2-3 weeks. Visible body changes take 2-3 months with consistency. Remember - sustainable, healthy results take time. Quick fixes don't last.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        I'm very busy. Will 15 minutes really work?
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Consistency beats duration. 15 minutes daily is better than 1 hour twice a week. Start with 15 min, increase when you have time. We design efficient workouts that deliver results.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        I'm vegetarian. Will the meal plan work?
+                    </div>
+                    <div class="faq-answer">
+                        Definitely! We specialize in Indian vegetarian diets. Dal, paneer, dahi, sabzi, fruits - we'll optimize what you already eat. Regional preferences (South Indian, Gujarati, Bengali, etc.) fully covered.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        I have health issues (BP, diabetes, PCOS). Can I do this?
+                    </div>
+                    <div class="faq-answer">
+                        Please consult your doctor first! If cleared, we'll provide condition-specific modifications. Many members exercise safely with health conditions. Your safety is our top priority - never skip doctor consultation.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        How do I get support? Is there a coach I can talk to?
+                    </div>
+                    <div class="faq-answer">
+                        Premium members get direct WhatsApp and email access to certified coaches. Ask questions anytime, get form feedback, share concerns. We're real humans who care about your progress!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What if I don't like it? Can I get a refund?
+                    </div>
+                    <div class="faq-answer">
+                        Yes! 30-day money-back guarantee. If Premium isn't for you, email us within 30 days for a full refund. No questions, no hassle. We want happy members, not trapped ones.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        How is this different from YouTube workout videos?
+                    </div>
+                    <div class="faq-answer">
+                        YouTube is great but generic. We personalize for YOUR fitness level, goals, time availability, home space, and Indian diet. Plus you get progressive plans that adapt, direct coach support, and accountability. Not one-size-fits-all.
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="final-cta">
         <div class="final-cta-content">
-            <h2>Ready to Transform?</h2>
-            <p>5,000+ Indians are already getting fit at home. Your turn starts now!</p>
+            <h2>Ready to Start Your Fitness Journey?</h2>
+            <p>Join hundreds of Indians getting fit at home. No gym, no equipment, no excuses.</p>
 
             <button class="cta-primary" onclick="openTallyForm()">
-                Start FREE Today - No Credit Card →
+                Start FREE Assessment Now →
             </button>
 
             <div style="margin-top: 25px; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; opacity: 0.95; font-size: 0.95em;">
-                <div>✓ Instant access</div>
-                <div>✓ No hidden charges</div>
-                <div>✓ 30-day guarantee</div>
+                <div>✓ No credit card needed</div>
+                <div>✓ 2-minute setup</div>
                 <div>✓ Cancel anytime</div>
+                <div>✓ 30-day guarantee</div>
             </div>
         </div>
     </section>
@@ -1227,12 +1496,12 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <h3>FitGenie</h3>
-                <p>India's most affordable and effective fitness coaching. Transform at home - the Indian way! 🇮🇳</p>
+                <p>Personal fitness coaching designed for Indians. Get fit at home - the smart, affordable way! 🇮🇳</p>
                 <div class="footer-social">
-                    <a href="#" class="social-link">📘</a>
-                    <a href="https://www.instagram.com/zeuss_ai?igsh=MWlwczJ6cHVhdnl4aw==" target="_blank" class="social-link">📷</a>
-                    <a href="#" class="social-link">🐦</a>
-                    <a href="https://tally.so/r/3q2WLO" class="social-link">💬</a>
+                    <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                    <a href="https://www.instagram.com/zeuss_ai" target="_blank" class="social-link" aria-label="Instagram">📷</a>
+                    <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    <a href="https://tally.so/r/3q2WLO" class="social-link" aria-label="Contact">💬</a>
                 </div>
             </div>
 
@@ -1242,7 +1511,7 @@
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#" onclick="openTallyForm()">Get Started</a></li>
                     <li><a href="https://tally.so/r/3q2WLO">Contact Us</a></li>
-                    <li><a href="#">About FitGenie</a></li>
+                    <li><a href="#">About Us</a></li>
                 </ul>
             </div>
 
@@ -1260,94 +1529,46 @@
                 <h4>Contact</h4>
                 <ul>
                     <li><a href="https://tally.so/r/3q2WLO">Get in Touch</a></li>
-                    <li><a href="mailto:adiifitsquad@gmail.com">adiifitsquad@gmail.com</a></li>
-                    <li>Response in 24 hours</li>
+                    <li><a href="mailto:support@fitgenie.in">support@fitgenie.in</a></li>
+                    <li>Response within 24 hours</li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <div class="footer-disclaimer">
-                <p style="font-weight: 700; margin-bottom: 8px; color: #fbbf24;">⚠️ Medical Disclaimer:</p>
+                <p style="font-weight: 700; margin-bottom: 8px; color: #fbbf24;">⚠️ Important Medical Disclaimer:</p>
                 <p>
-                    FitGenie provides general fitness guidance only - not medical advice, diagnosis, or treatment. 
-                    Consult your doctor before starting any fitness or nutrition program. 
-                    If you have medical conditions, injuries, or are pregnant, get doctor clearance first. 
-                    Stop exercise immediately if you experience pain, dizziness, or discomfort and consult a doctor. 
-                    Individual results vary based on consistency, starting point, genetics, and lifestyle. 
-                    We don't guarantee specific results. For users 18+ only.
+                    FitGenie provides general fitness information only - NOT medical advice, diagnosis, or treatment. 
+                    Always consult your doctor before starting any fitness or nutrition program, especially if you have medical conditions, injuries, are pregnant, or take medications. 
+                    Stop exercising immediately if you experience pain, dizziness, or discomfort, and consult a healthcare professional. 
+                    Individual results vary based on consistency, genetics, lifestyle, and starting point. We don't guarantee specific results. 
+                    For users 18+ only. By using our service, you acknowledge these disclaimers.
                 </p>
             </div>
 
             <p style="margin-top: 25px; font-size: 0.95em;">
                 © 2024 FitGenie. Made in India with ❤️<br>
-                All rights reserved. For Indians, by Indians!
+                All rights reserved. Empowering Indians to get fit at home.
             </p>
         </div>
     </footer>
 
-    <div class="floating-whatsapp" onclick="openTallyForm()"></div>
+    <div class="floating-whatsapp" onclick="openTallyForm()" aria-label="Start chat"></div>
 
     <div class="sticky-cta-mobile">
-        <button onclick="openTallyForm()">Start FREE Trial →</button>
+        <button onclick="openTallyForm()">Start FREE Assessment →</button>
     </div>
 
     <script>
-        // Countdown Timer
-        function updateCountdown() {
-            const now = new Date();
-            const midnight = new Date(now);
-            midnight.setHours(24, 0, 0, 0);
-            
-            const diff = midnight - now;
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            const countdownEl = document.getElementById('countdown');
-            if (countdownEl) {
-                countdownEl.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-            }
-        }
-        
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-
-        // Email Capture
-        function handleEmailSubmit(event) {
-            event.preventDefault();
-            const email = document.getElementById('emailInput').value;
-            
-            if (email) {
-                // Store email in session
-                sessionStorage.setItem('userEmail', email);
-                
-                // Track event
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'email_capture', {
-                        'event_category': 'lead',
-                        'event_label': 'hero_form'
-                    });
-                }
-                
-                // Redirect to Tally with email pre-filled
-                window.open(`https://tally.so/r/mV2dNa?email=${encodeURIComponent(email)}`, '_blank');
-            }
-        }
-
         // Open Tally Form
         function openTallyForm() {
-            const email = sessionStorage.getItem('userEmail');
-            const url = email 
-                ? `https://tally.so/r/mV2dNa?email=${encodeURIComponent(email)}`
-                : 'https://tally.so/r/mV2dNa';
-            
-            window.open(url, '_blank');
+            window.open('https://tally.so/r/mV2dNa', '_blank');
             
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_open', {
+                gtag('event', 'cta_click', {
                     'event_category': 'engagement',
-                    'event_label': 'cta_click'
+                    'event_label': 'open_form'
                 });
             }
         }
@@ -1357,7 +1578,6 @@
             const faqItem = element.parentElement;
             const isActive = faqItem.classList.contains('active');
             
-            // Don't close all - allow multiple open
             if (isActive) {
                 faqItem.classList.remove('active');
             } else {
@@ -1365,9 +1585,9 @@
             }
 
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'faq_click', {
+                gtag('event', 'faq_interaction', {
                     'event_category': 'engagement',
-                    'event_label': element.textContent.trim()
+                    'event_label': element.textContent.trim().substring(0, 50)
                 });
             }
         }
@@ -1375,25 +1595,37 @@
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.includes('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
 
-        // Scroll Tracking
+        // Show sticky mobile CTA on scroll
+        const stickyCTA = document.querySelector('.sticky-cta-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.innerWidth <= 768) {
+                if (window.pageYOffset > 500) {
+                    stickyCTA.style.transform = 'translateY(0)';
+                } else {
+                    stickyCTA.style.transform = 'translateY(100%)';
+                }
+            }
+        });
+
+        // Analytics
         if (typeof gtag !== 'undefined') {
-            let scrollTracked = {
-                25: false,
-                50: false,
-                75: false,
-                100: false
-            };
+            // Track scroll depth
+            let scrollTracked = { 25: false, 50: false, 75: false, 100: false };
 
             window.addEventListener('scroll', function() {
                 const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
@@ -1401,573 +1633,29 @@
                 Object.keys(scrollTracked).forEach(depth => {
                     if (scrollPercent >= parseInt(depth) && !scrollTracked[depth]) {
                         scrollTracked[depth] = true;
-                        gtag('event', 'scroll', {
+                        gtag('event', 'scroll_depth', {
                             'event_category': 'engagement',
-                            'event_label': depth + '%',
                             'value': parseInt(depth)
                         });
                     }
                 });
             });
 
-            // CTA Click Tracking
-            document.querySelectorAll('.cta-primary, .pricing-cta').forEach(button => {
+            // Track CTA clicks
+            document.querySelectorAll('.cta-primary, .pricing-cta, .cta-button-large').forEach(button => {
                 button.addEventListener('click', function() {
-                    gtag('event', 'cta_click', {
+                    gtag('event', 'cta_clicked', {
                         'event_category': 'conversion',
                         'event_label': this.textContent.trim()
                     });
                 });
             });
 
-            // Page Load Tracking
+            // Page view
             gtag('event', 'page_view', {
-                'page_title': 'FitGenie Optimized Landing',
+                'page_title': 'FitGenie - Home Fitness Coaching',
                 'page_location': window.location.href
             });
         }
 
-        // Show sticky mobile CTA on scroll
-        let lastScroll = 0;
-        const stickyCTA = document.querySelector('.sticky-cta-mobile');
-        
-        window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
-            
-            if (window.innerWidth <= 768) {
-                if (currentScroll > 500) {
-                    stickyCTA.style.transform = 'translateY(0)';
-                } else {
-                    stickyCTA.style.transform = 'translateY(100%)';
-                }
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Structured Data
-        const structuredData = {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "FitGenie",
-            "description": "India's most affordable fitness coaching platform. Transform at home with personalized plans.",
-            "priceRange": "₹599",
-            "email": "adiifitsquad@gmail.com",
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "IN"
-            },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "reviewCount": "5000"
-            },
-            "offers": {
-                "@type": "Offer",
-                "price": "599",
-                "priceCurrency": "INR",
-                "availability": "https://schema.org/InStock"
-            }
-        };
-
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.text = JSON.stringify(structuredData);
-        document.head.appendChild(script);
-
-        // Performance Tracking
-        window.addEventListener('load', function() {
-            if (typeof gtag !== 'undefined' && window.performance) {
-                const perfData = window.performance.timing;
-                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-                
-                gtag('event', 'timing_complete', {
-                    'name': 'load',
-                    'value': pageLoadTime,
-                    'event_category': 'performance'
-                });
-            }
-        });
-
-        // Console branding
-        console.log('%c🔥 FitGenie - Made with ❤️ for Indians!', 'color: #667eea; font-size: 20px; font-weight: bold;');
-        console.log('%c💪 Start your transformation today!', 'color: #f59e0b; font-size: 16px; font-weight: bold;');
-    </script>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV9RMDTNDZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-TV9RMDTNDZ');
-    </script>
-</body>
-</html>>
-                <div class="hero-stat">
-                    <span class="number">85%</span>
-                    <span class="label">See Results</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="number">₹20</span>
-                    <span class="label">Per Day</span>
-                </div>
-            </div>
-
-            <form class="email-capture" onsubmit="handleEmailSubmit(event)">
-                <input type="email" id="emailInput" placeholder="Your email address" required>
-                <button type="submit">Start FREE →</button>
-            </form>
-
-            <div class="trust-badges">
-                <div class="trust-badge">No gym needed</div>
-                <div class="trust-badge">Cancel anytime</div>
-                <div class="trust-badge">Indian diet friendly</div>
-            </div>
-
-            <div class="social-proof-bar">
-                <strong>47 people</strong> joined today!
-            </div>
-        </div>
-    </section>
-
-    <div class="live-activity">
-        <div class="activity-container">
-            <div class="activity-track">
-                <div class="activity-item">
-                    <div class="activity-avatar">P</div>
-                    <div><span class="activity-name">Priya, Mumbai</span> started • <span class="activity-time">2 min ago</span></div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">R</div>
-                    <div><span class="activity-name">Rajesh, Bangalore</span> completed workout • <span class="activity-time">5 min ago</span></div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">M</div>
-                    <div><span class="activity-name">Meera, Delhi</span> lost 3kg • <span class="activity-time">12 min ago</span></div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">A</div>
-                    <div><span class="activity-name">Arjun, Pune</span> joined premium • <span class="activity-time">18 min ago</span></div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">S</div>
-                    <div><span class="activity-name">Sneha, Chennai</span> started • <span class="activity-time">22 min ago</span></div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">P</div>
-                    <div><span class="activity-name">Priya, Mumbai</span> started • <span class="activity-time">2 min ago</span></div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">R</div>
-                    <div><span class="activity-name">Rajesh, Bangalore</span> completed workout • <span class="activity-time">5 min ago</span></div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">M</div>
-                    <div><span class="activity-name">Meera, Delhi</span> lost 3kg • <span class="activity-time">12 min ago</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Simple Process</span>
-                <h2 class="section-title">Start Karna Bilkul Aasan Hai</h2>
-                <p class="section-subtitle">Bas 3 simple steps - aur aapka fitness journey shuru!</p>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>FREE Assessment Lo</h3>
-                    <p>60 seconds mein complete - aapki fitness level, goals, aur Indian lifestyle ko samajhte hain. Koi credit card nahi chahiye.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Personalized Plan Paao</h3>
-                    <p>AI coach aapke liye custom workout aur Indian meal plan banata hai. Email aur WhatsApp pe instantly mil jata hai.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Results Dekho</h3>
-                    <p>Roz 15-30 min workout karo ghar pe. Coach weekly updates deta hai aapke progress ke according.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="problem-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">The Problem</span>
-                <h2 class="section-title">Why Most Indians Struggle</h2>
-                <p class="section-subtitle">Generic fitness plans don't work for Indian lifestyle</p>
-            </div>
-
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <span class="problem-icon">💸</span>
-                    <h3>Expensive Gym Fees</h3>
-                    <p>₹5,000-15,000/month for gyms. Personal trainers cost ₹10,000+ extra. Most families can't afford this long-term.</p>
-                </div>
-                <div class="problem-card">
-                    <span class="problem-icon">🕐</span>
-                    <h3>No Time to Commute</h3>
-                    <p>2 hours commute + 10-hour work days = exhausted. Mumbai traffic, Bangalore roads - gym becomes another burden.</p>
-                </div>
-                <div class="problem-card">
-                    <span class="problem-icon">🥘</span>
-                    <h3>Foreign Diet Plans</h3>
-                    <p>International plans ignore roti-dal-sabzi. No guidance for vegetarians, regional cuisines, or family meals that actually work.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="transformation-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Success Stories</span>
-                <h2 class="section-title">Real Indians, Real Results</h2>
-                <p class="section-subtitle">Join thousands transforming at home<br><small style="color: #9ca3af; font-size: 0.85em;">*Individual results vary. Doctor consultation recommended.</small></p>
-            </div>
-
-            <div class="transformation-grid">
-                <div class="transformation-card">
-                    <div class="transformation-image">
-                        <span>Priya's Journey</span>
-                        <div class="verified-badge">✓ Verified</div>
-                    </div>
-                    <div class="transformation-content">
-                        <h4>Priya M., Software Engineer</h4>
-                        <span class="result-highlight">Lost 6kg in 3 months</span>
-                        <p class="testimonial-text">"Finally found a plan that fits my 10-hour schedule and vegetarian diet. No gym commute, workout in my room!"</p>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                    </div>
-                </div>
-
-                <div class="transformation-card">
-                    <div class="transformation-image">
-                        <span>Rajesh's Story</span>
-                        <div class="verified-badge">✓ Verified</div>
-                    </div>
-                    <div class="transformation-content">
-                        <h4>Rajesh K., Marketing Manager</h4>
-                        <span class="result-highlight">Built strength at home</span>
-                        <p class="testimonial-text">"Travel ke baad bhi workout nahi chhoota. Hotel room, PG, kahin bhi kar sakta hun. Game changer!"</p>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                    </div>
-                </div>
-
-                <div class="transformation-card">
-                    <div class="transformation-image">
-                        <span>Meera's Success</span>
-                        <div class="verified-badge">✓ Verified</div>
-                    </div>
-                    <div class="transformation-content">
-                        <h4>Meera S., New Mother</h4>
-                        <span class="result-highlight">Post-pregnancy fitness</span>
-                        <p class="testimonial-text">"15-min workouts around baby's schedule. Doctor-approved gradual progress. Got my energy back!"</p>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                    </div>
-                </div>
-
-                <div class="transformation-card">
-                    <div class="transformation-image">
-                        <span>Arjun's Journey</span>
-                        <div class="verified-badge">✓ Verified</div>
-                    </div>
-                    <div class="transformation-content">
-                        <h4>Arjun P., College Student</h4>
-                        <span class="result-highlight">0 to 25 pushups</span>
-                        <p class="testimonial-text">"Premium coaching at student prices! Works in hostel room. Mess food optimization guide was genius."</p>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label" style="background: rgba(255,255,255,0.2);">What You Get</span>
-                <h2 class="section-title" style="color: white;">Why FitGenie Works for Indians</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Built specifically for Indian lifestyle, diet, and homes</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">🇮🇳</span>
-                    <h3>100% Indian-Focused</h3>
-                    <p>Designed for Indian homes, timing, and food. Understands your roti-dal diet and family dynamics perfectly.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">⚡</span>
-                    <h3>AI Coach That Adapts</h3>
-                    <p>Learns your body type, schedule, preferences, home space. Updates weekly based on your progress and feedback.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🏠</span>
-                    <h3>Works Anywhere</h3>
-                    <p>6x8 Mumbai flat or shared PG room - doesn't matter. No gym needed, just your body and commitment.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🥗</span>
-                    <h3>Indian Meal Guidance</h3>
-                    <p>Works with your existing diet. Vegetarian, non-veg, South Indian, Gujarati, Bengali - all covered!</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">💰</span>
-                    <h3>Actually Affordable</h3>
-                    <p>Just ₹20/day - less than one movie ticket. Professional coaching accessible to everyone.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">📱</span>
-                    <h3>Simple Delivery</h3>
-                    <p>Plans via email and WhatsApp. No complex app, low data usage, works on any phone.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🛡️</span>
-                    <h3>Safety First</h3>
-                    <p>Injury prevention focus, proper form videos, modifications for all fitness levels. Start slow, progress safely.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">💬</span>
-                    <h3>Real Human Support</h3>
-                    <p>Talk directly to your coach. No bots, real people who care. Regional language support available!</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🎯</span>
-                    <h3>Progressive Plans</h3>
-                    <p>Beginner to advanced path. New exercises weekly, difficulty increases gradually. Your pace, no pressure.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="comparison-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Comparison</span>
-                <h2 class="section-title">FitGenie vs Others</h2>
-                <p class="section-subtitle">See the difference clearly</p>
-            </div>
-
-            <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th class="highlight-col">FitGenie</th>
-                            <th>Traditional Gym</th>
-                            <th>Other Apps</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="feature-name">Monthly Cost</td>
-                            <td class="highlight-col"><strong>₹599</strong></td>
-                            <td>₹5,000-15,000</td>
-                            <td>₹1,500-3,000</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Indian Diet Plans</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span></td>
-                            <td><span class="check-no">✗</span></td>
-                            <td><span class="check-no">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Home Workouts</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span></td>
-                            <td><span class="check-no">✗</span></td>
-                            <td><span class="check-yes">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Personal Coach</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span></td>
-                            <td>₹10,000+ extra</td>
-                            <td><span class="check-no">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Regional Language</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span></td>
-                            <td><span class="check-no">✗</span></td>
-                            <td><span class="check-no">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Equipment Needed</td>
-                            <td class="highlight-col">None</td>
-                            <td>Everything</td>
-                            <td>Some</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Time Required</td>
-                            <td class="highlight-col">15 min/day</td>
-                            <td>2+ hours total</td>
-                            <td>30-60 min</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Cancel Anytime</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span></td>
-                            <td><span class="check-no">✗</span> Annual lock</td>
-                            <td><span class="check-yes">✓</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing-section" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Pricing</span>
-                <h2 class="section-title">Start Your Transformation Today</h2>
-                <p class="section-subtitle">Simple pricing, no hidden charges. Try FREE first!</p>
-            </div>
-
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3>FREE Trial</h3>
-                    <div class="price">
-                        <span class="currency">₹</span>0
-                        <span class="period">/forever</span>
-                    </div>
-                    <p class="price-detail">Perfect to get started - completely free!</p>
-                    <ul>
-                        <li>Complete fitness assessment</li>
-                        <li>Starter workout plan</li>
-                        <li>Basic Indian meal timing</li>
-                        <li>Community access</li>
-                        <li>Regional language support</li>
-                    </ul>
-                    <button class="pricing-cta" onclick="openTallyForm()">Get FREE Trial</button>
-                    <p class="money-back">⚠️ Doctor consultation recommended</p>
-                </div>
-
-                <div class="pricing-card featured">
-                    <div class="popular-badge">🔥 MOST POPULAR</div>
-                    <h3>Premium Coaching</h3>
-                    <div class="price">
-                        <span class="currency">₹</span>599
-                        <span class="period">/month</span>
-                    </div>
-                    <p class="price-detail">Just ₹20/day - Less than one chai!</p>
-                    <ul>
-                        <li>Weekly personalized plans</li>
-                        <li>Complete Indian nutrition guide</li>
-                        <li>Form correction videos</li>
-                        <li>Direct coach support</li>
-                        <li>Progress tracking & adjustments</li>
-                        <li>Injury modifications</li>
-                        <li>Travel workout alternatives</li>
-                        <li>Festival season adaptations</li>
-                        <li>Monthly review calls</li>
-                        <li>Full regional language support</li>
-                    </ul>
-                    <button class="pricing-cta" onclick="openTallyForm()">Get Premium Now</button>
-                    <p class="money-back">💯 30-Day Money Back Guarantee</p>
-                </div>
-            </div>
-
-            <div class="guarantee-box">
-                <h4>🛡️ Risk-Free 30-Day Guarantee</h4>
-                <p>Not happy? Get 100% refund. No questions asked. We're confident you'll love it, but if it's not for you, we'll return every rupee.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">FAQs</span>
-                <h2 class="section-title">Your Questions Answered</h2>
-                <p class="section-subtitle">Sabhi doubts clear kar dete hain</p>
-            </div>
-
-            <div class="faq-container">
-                <div class="faq-item active">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        Main beginner hun, kabhi gym nahi gaya. Mere liye hai?
-                    </div>
-                    <div class="faq-answer">
-                        Bilkul! Most successful users are beginners. We start from basics - teaching body movement first, then building strength slowly. No judgement, just consistency matters!
-                    </div>
-                </div>
-
-                <div class="faq-item active">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        Kya equipment chahiye?
-                    </div>
-                    <div class="faq-answer">
-                        Kuch nahi! All exercises are bodyweight-based. Just need small space (6x6 feet works). If you have dumbbells/bands, great - but not required at all.
-                    </div>
-                </div>
-
-                <div class="faq-item active">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        Kitna time lagega results mein?
-                    </div>
-                    <div class="faq-answer">
-                        Results vary per person. Generally, 2-3 weeks mein energy boost feel hoga. 2-3 months mein visible changes with consistency. Remember - sustainable results take time, and that's healthy!
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        Main bahut busy hun, daily 1 hour karna padega?
-                    </div>
-                    <div class="faq-answer">
-                        Nahi! Start with just 15 minutes daily. When you have time, do 30-45 min. We give flexible plans that fit your schedule. Consistency beats duration!
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        Vegetarian diet hai, kaam karega?
-                    </div>
-                    <div class="faq-answer">
-                        Haan bilkul! 70% users are vegetarian. We optimize Indian vegetarian diet - dal, paneer, dahi, sabzi, fruits. Regional preferences (South Indian, Gujarati, Bengali) bhi covered!
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        Health problems hain (BP, diabetes, PCOS), kar sakta hun?
-                    </div>
-                    <div class="faq-answer">
-                        First, doctor se consult karo! If doctor clears you, we'll provide condition-specific modifications. Many users safely exercise with health conditions. Your safety is our priority.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        Regional language mein support milega?
-                    </div>
-                    <div class="faq-answer">
-                        Haan! Hindi, English, Hinglish available. Need Marathi, Tamil, Telugu, Bengali, Gujarati? Let us know - we'll arrange it for you!
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        Agar plan pasand nahi aaya?
-                    </div>
-                    <div class="faq-answer">
-                        30-day money back guarantee! If you feel it's not for you, full refund. No questions asked. But first, talk to us - maybe we can adjust the plan for you!
-                    </div>
-                </div>
-            </div
+        // Structured Data for
