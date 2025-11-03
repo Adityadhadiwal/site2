@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitGenie - Home Fitness Coach for Indians | Start FREE</title>
-    <meta name="description" content="Personal fitness coaching for busy Indians. Home workouts + Indian diet plans. No gym, no equipment. ₹999/month. Start with FREE trial." />
+    <title>FitGenie - Ghar Baithe Fit Ho Jao | ₹599/month se shuru</title>
+    <meta name="description" content="Busy Indians ke liye personal fitness coaching. Ghar pe workout + Indian diet plan. No gym, no equipment. FREE trial se start karo!" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -18,47 +18,72 @@
         }
 
         .announcement-bar {
-            background: linear-gradient(90deg, #10b981, #059669);
-            color: white; padding: 12px 20px; text-align: center;
-            font-weight: 600; font-size: 0.9em;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white; padding: 14px 20px; text-align: center;
+            font-weight: 600; font-size: 0.95em;
             position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(16,185,129,0.3);
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
         }
         
         .announcement-bar .highlight {
-            background: rgba(255,255,255,0.25);
-            padding: 2px 10px; border-radius: 4px;
-            margin: 0 5px;
+            background: rgba(255,255,255,0.3);
+            padding: 3px 12px; border-radius: 6px;
+            margin: 0 6px;
             font-weight: 800;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .trust-bar {
-            background: #f9fafb;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 12px 20px;
+            background: linear-gradient(to bottom, #f9fafb, #ffffff);
+            border-bottom: 2px solid #e5e7eb;
+            padding: 16px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
             flex-wrap: wrap;
-            font-size: 0.85em;
+            font-size: 0.9em;
             color: #6b7280;
         }
         
         .trust-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .trust-item::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: 800;
+            font-size: 1.2em;
         }
         
         .trust-item span {
-            font-weight: 600;
+            font-weight: 700;
             color: #1f2937;
         }
 
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 60px 20px 80px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+            color: white; padding: 80px 20px 100px;
             position: relative; overflow: hidden;
         }
         
@@ -66,98 +91,170 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
             text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .hero-content h1 {
-            font-size: 3em;
-            font-weight: 800;
+            font-size: 3.5em;
+            font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
+            margin-bottom: 25px;
+            letter-spacing: -1.5px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         
         .hero-content .subtitle {
-            font-size: 1.3em;
-            opacity: 0.95;
-            margin-bottom: 35px;
-            line-height: 1.5;
+            font-size: 1.4em;
+            opacity: 0.98;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 600px;
-            margin: 35px auto;
+            gap: 25px;
+            max-width: 700px;
+            margin: 40px auto;
         }
         
         .hero-stat {
             text-align: center;
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.2);
+            padding: 20px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            border: 2px solid rgba(255,255,255,0.25);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .hero-stat:nth-child(1) { animation-delay: 0.2s; }
+        .hero-stat:nth-child(2) { animation-delay: 0.3s; }
+        .hero-stat:nth-child(3) { animation-delay: 0.4s; }
+
+        .hero-stat:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.4);
         }
         
         .hero-stat .number {
-            font-size: 2.2em;
-            font-weight: 800;
+            font-size: 2.5em;
+            font-weight: 900;
             display: block;
             color: #fbbf24;
+            text-shadow: 0 2px 10px rgba(251,191,36,0.5);
         }
         
         .hero-stat .label {
-            font-size: 0.85em;
-            opacity: 0.9;
-            margin-top: 5px;
+            font-size: 0.9em;
+            opacity: 0.95;
+            margin-top: 8px;
+            font-weight: 600;
         }
 
         .cta-button-large {
             display: inline-block;
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-            padding: 20px 45px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1.2em;
+            padding: 22px 50px;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 1.3em;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             border: none;
-            box-shadow: 0 10px 30px rgba(16,185,129,0.4);
-            margin-top: 20px;
+            box-shadow: 0 15px 40px rgba(16,185,129,0.5);
+            margin-top: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button-large::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button-large:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .cta-button-large:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(16,185,129,0.5);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(16,185,129,0.6);
+        }
+
+        .cta-button-large:active {
+            transform: translateY(-2px) scale(1.02);
         }
 
         .trust-badges {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 30px;
             flex-wrap: wrap;
-            font-size: 0.9em;
+            font-size: 0.95em;
+            animation: fadeInUp 0.8s ease-out 0.5s backwards;
         }
         
         .trust-badge {
             display: flex;
             align-items: center;
-            gap: 8px;
-            opacity: 0.95;
+            gap: 10px;
+            opacity: 0.98;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .trust-badge:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.05);
         }
         
         .trust-badge::before {
@@ -165,62 +262,74 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 22px;
-            height: 22px;
-            background: rgba(16,185,129,0.3);
+            width: 24px;
+            height: 24px;
+            background: rgba(16,185,129,0.4);
             border-radius: 50%;
-            font-weight: bold;
+            font-weight: 900;
         }
 
         .founder-section {
-            padding: 60px 20px;
-            background: white;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #ffffff, #f9fafb);
         }
 
         .founder-box {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background: #f9fafb;
-            border-radius: 20px;
-            padding: 40px;
+            background: white;
+            border-radius: 24px;
+            padding: 50px;
             display: flex;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            border: 1px solid #e5e7eb;
+            transition: all 0.4s ease;
+        }
+
+        .founder-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
         }
 
         .founder-avatar {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             border-radius: 50%;
             flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3em;
+            font-size: 3.5em;
             color: white;
+            box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+            border: 4px solid white;
         }
 
         .founder-content h3 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #1f2937;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            font-weight: 800;
         }
 
         .founder-content .credentials {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 15px;
+            color: #6366f1;
+            font-weight: 700;
+            margin-bottom: 18px;
+            font-size: 1.05em;
         }
 
         .founder-content p {
             color: #4b5563;
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 1.05em;
         }
 
         .how-it-works {
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: #f9fafb;
         }
 
@@ -231,181 +340,225 @@
         
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         
         .section-label {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.85em;
-            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.3);
         }
         
         .section-title {
-            font-size: 2.5em;
-            font-weight: 800;
+            font-size: 3em;
+            font-weight: 900;
             color: #1f2937;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             line-height: 1.2;
+            letter-spacing: -1px;
         }
         
         .section-subtitle {
-            font-size: 1.15em;
+            font-size: 1.25em;
             color: #6b7280;
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
+            line-height: 1.6;
         }
 
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1000px;
+            gap: 35px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .step-card {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 30px;
             background: white;
-            border-radius: 16px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(99,102,241,0.2);
+            border-color: #6366f1;
         }
 
         .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8em;
-            font-weight: 800;
-            margin: 0 auto 20px;
+            font-size: 2em;
+            font-weight: 900;
+            margin: 0 auto 25px;
+            box-shadow: 0 8px 20px rgba(99,102,241,0.4);
         }
 
         .step-card h3 {
-            font-size: 1.3em;
+            font-size: 1.5em;
             color: #1f2937;
-            margin-bottom: 10px;
-            font-weight: 700;
+            margin-bottom: 15px;
+            font-weight: 800;
         }
 
         .step-card p {
             color: #6b7280;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 1.05em;
         }
 
         .problem-section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: white;
         }
 
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
         
         .problem-card {
-            background: #f9fafb;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            background: linear-gradient(to bottom right, #f9fafb, #ffffff);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 2px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ef4444, #f59e0b);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
         
+        .problem-card:hover::before {
+            transform: scaleX(1);
+        }
+
         .problem-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-            border-color: #667eea;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+            border-color: #6366f1;
         }
         
         .problem-icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
+            font-size: 3em;
+            margin-bottom: 20px;
             display: block;
+            filter: grayscale(0.3);
         }
         
         .problem-card h3 {
-            font-size: 1.3em;
+            font-size: 1.5em;
             color: #1f2937;
-            margin-bottom: 10px;
-            font-weight: 700;
+            margin-bottom: 15px;
+            font-weight: 800;
         }
         
         .problem-card p {
             color: #6b7280;
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 1.05em;
         }
 
         .benefits-section {
-            padding: 60px 20px;
-            background: #f9fafb;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
         }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 900px;
-            margin: 50px auto 0;
+            gap: 25px;
+            max-width: 1000px;
+            margin: 60px auto 0;
         }
 
         .benefit-item {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
+            padding: 30px;
+            border-radius: 16px;
             display: flex;
             align-items: flex-start;
-            gap: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            gap: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(99,102,241,0.15);
+            border-color: #6366f1;
         }
 
         .benefit-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 12px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5em;
+            font-size: 1.7em;
             flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(99,102,241,0.3);
         }
 
         .benefit-content h4 {
-            font-size: 1.1em;
+            font-size: 1.2em;
             color: #1f2937;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-weight: 800;
         }
 
         .benefit-content p {
             color: #6b7280;
-            font-size: 0.95em;
-            line-height: 1.5;
+            font-size: 1em;
+            line-height: 1.6;
         }
 
         .comparison-section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: white;
         }
         
         .comparison-table {
-            max-width: 1000px;
-            margin: 50px auto 0;
+            max-width: 1100px;
+            margin: 60px auto 0;
             background: white;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
         
         .comparison-table table {
@@ -414,107 +567,124 @@
         }
         
         .comparison-table th {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             color: white;
-            padding: 18px;
+            padding: 22px;
             text-align: left;
-            font-weight: 700;
-            font-size: 1.05em;
+            font-weight: 800;
+            font-size: 1.1em;
         }
         
         .comparison-table td {
-            padding: 18px;
+            padding: 22px;
             border-bottom: 1px solid #e5e7eb;
+            font-size: 1.05em;
         }
         
         .comparison-table tr:last-child td {
             border-bottom: none;
         }
+
+        .comparison-table tr:hover {
+            background: #f9fafb;
+        }
         
         .comparison-table .feature-name {
-            font-weight: 600;
+            font-weight: 700;
             color: #1f2937;
         }
         
         .check-yes {
             color: #10b981;
-            font-size: 1.5em;
+            font-size: 1.8em;
             font-weight: bold;
         }
         
         .check-no {
             color: #ef4444;
-            font-size: 1.5em;
+            font-size: 1.8em;
             font-weight: bold;
         }
         
         .highlight-col {
-            background: #f0fdf4;
+            background: linear-gradient(to bottom, #f0fdf4, #ffffff);
+            font-weight: 700;
         }
 
         .pricing-section {
-            padding: 60px 20px;
-            background: #f9fafb;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
         }
         
         .pricing-cards {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 30px;
-            max-width: 900px;
-            margin: 50px auto 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 35px;
+            max-width: 1200px;
+            margin: 60px auto 0;
         }
         
         .pricing-card {
             background: white;
-            border-radius: 24px;
-            padding: 35px;
+            border-radius: 28px;
+            padding: 45px;
             position: relative;
-            border: 2px solid #e5e7eb;
-            transition: all 0.3s ease;
+            border: 3px solid #e5e7eb;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
         
         .pricing-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
         }
         
         .pricing-card.featured {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
             color: white;
             border: none;
-            box-shadow: 0 20px 60px rgba(102,126,234,0.4);
+            box-shadow: 0 25px 70px rgba(99,102,241,0.5);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-10px) scale(1.08);
         }
         
         .popular-badge {
             position: absolute;
-            top: -12px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, #f59e0b, #d97706);
             color: white;
-            padding: 6px 20px;
-            border-radius: 25px;
-            font-size: 0.75em;
-            font-weight: 700;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.8em;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 5px 15px rgba(245,158,11,0.4);
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(245,158,11,0.5);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-5px); }
         }
         
         .pricing-card h3 {
-            font-size: 1.6em;
-            margin-bottom: 8px;
-            font-weight: 700;
+            font-size: 1.8em;
+            margin-bottom: 12px;
+            font-weight: 800;
         }
         
         .pricing-card .price {
-            font-size: 3em;
-            font-weight: 800;
-            margin: 15px 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            margin: 20px 0;
             display: flex;
             align-items: baseline;
-            gap: 5px;
+            gap: 8px;
         }
         
         .pricing-card .price .currency {
@@ -525,34 +695,35 @@
         .pricing-card .price .period {
             font-size: 0.35em;
             opacity: 0.7;
-            font-weight: 600;
+            font-weight: 700;
         }
         
         .price-detail {
-            font-size: 0.9em;
-            opacity: 0.8;
-            margin-bottom: 20px;
+            font-size: 0.95em;
+            opacity: 0.85;
+            margin-bottom: 25px;
+            font-weight: 600;
         }
         
         .pricing-card ul {
             list-style: none;
-            margin: 25px 0;
+            margin: 30px 0;
         }
         
         .pricing-card li {
-            padding: 10px 0;
+            padding: 12px 0;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            line-height: 1.5;
-            font-size: 0.95em;
+            gap: 12px;
+            line-height: 1.6;
+            font-size: 1em;
         }
         
         .pricing-card li::before {
             content: '✓';
             color: #10b981;
-            font-weight: bold;
-            font-size: 1.2em;
+            font-weight: 900;
+            font-size: 1.3em;
             flex-shrink: 0;
         }
         
@@ -561,135 +732,157 @@
         }
         
         .pricing-card.featured li {
-            color: rgba(255,255,255,0.95);
+            color: rgba(255,255,255,0.98);
         }
         
         .pricing-cta {
             width: 100%;
-            padding: 16px;
-            border-radius: 12px;
-            font-size: 1.05em;
-            font-weight: 700;
+            padding: 18px;
+            border-radius: 14px;
+            font-size: 1.1em;
+            font-weight: 800;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 15px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .pricing-card:not(.featured) .pricing-cta {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             color: white;
-            box-shadow: 0 8px 20px rgba(102,126,234,0.3);
+            box-shadow: 0 10px 25px rgba(99,102,241,0.4);
         }
         
         .pricing-card.featured .pricing-cta {
             background: white;
-            color: #667eea;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            color: #6366f1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         
         .pricing-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
         
         .money-back {
             text-align: center;
-            margin-top: 12px;
-            font-size: 0.85em;
-            opacity: 0.8;
-            font-weight: 600;
+            margin-top: 15px;
+            font-size: 0.9em;
+            opacity: 0.85;
+            font-weight: 700;
         }
 
         .guarantee-box {
-            max-width: 600px;
-            margin: 40px auto 0;
+            max-width: 700px;
+            margin: 50px auto 0;
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-            padding: 25px 30px;
-            border-radius: 16px;
+            padding: 35px 40px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(16,185,129,0.3);
+            box-shadow: 0 15px 40px rgba(16,185,129,0.4);
+            border: 3px solid rgba(255,255,255,0.3);
         }
 
         .guarantee-box h4 {
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            font-weight: 800;
+            font-size: 1.5em;
+            margin-bottom: 12px;
+            font-weight: 900;
         }
 
         .guarantee-box p {
-            opacity: 0.95;
-            line-height: 1.6;
+            opacity: 0.98;
+            line-height: 1.7;
+            font-size: 1.05em;
         }
 
         .faq-section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: white;
         }
         
         .faq-container {
-            max-width: 800px;
-            margin: 50px auto 0;
+            max-width: 900px;
+            margin: 60px auto 0;
         }
         
         .faq-item {
             background: #f9fafb;
-            border-radius: 12px;
-            margin-bottom: 15px;
+            border-radius: 16px;
+            margin-bottom: 18px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
         }
         
+        .faq-item:hover {
+            border-color: #6366f1;
+        }
+
         .faq-item.active {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(99,102,241,0.15);
+            border-color: #6366f1;
         }
         
         .faq-question {
-            padding: 20px 25px;
-            font-size: 1.05em;
-            font-weight: 700;
+            padding: 25px 30px;
+            font-size: 1.15em;
+            font-weight: 800;
             color: #1f2937;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s ease;
+            user-select: none;
         }
         
         .faq-question:hover {
             background: #f3f4f6;
+            color: #6366f1;
         }
         
-        .faq-question::after {
-            content: '+';
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5em;
-            color: #667eea;
             font-weight: bold;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
         }
         
-        .faq-item.active .faq-question::after {
+        .faq-item.active .faq-icon {
             transform: rotate(45deg);
+            background: linear-gradient(135deg, #8b5cf6, #d946ef);
         }
         
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 25px;
-            color: #6b7280;
-            line-height: 1.7;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 30px;
+            color: #4b5563;
+            line-height: 1.8;
+            font-size: 1.05em;
         }
         
         .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding: 0 25px 20px;
+            max-height: 600px;
+            padding: 0 30px 25px;
         }
 
         .final-cta {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
             color: white;
             text-align: center;
             position: relative;
@@ -700,56 +893,81 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: gradientShift 20s ease infinite;
         }
         
         .final-cta-content {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
         }
         
         .final-cta h2 {
-            font-size: 2.5em;
-            font-weight: 800;
-            margin-bottom: 15px;
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 20px;
             line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         
         .final-cta p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            opacity: 0.95;
+            font-size: 1.35em;
+            margin-bottom: 35px;
+            opacity: 0.98;
+            line-height: 1.6;
         }
 
         .cta-primary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-            padding: 20px 45px;
-            border-radius: 12px;
-            font-size: 1.2em;
-            font-weight: 700;
+            padding: 22px 50px;
+            border-radius: 14px;
+            font-size: 1.3em;
+            font-weight: 800;
             text-decoration: none;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 15px 40px rgba(16,185,129,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-primary:hover::before {
+            width: 400px;
+            height: 400px;
         }
         
         .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(16,185,129,0.5);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(16,185,129,0.6);
         }
 
         footer {
             background: #1f2937;
             color: rgba(255,255,255,0.8);
-            padding: 50px 20px 25px;
+            padding: 60px 20px 30px;
         }
         
         .footer-content {
@@ -757,32 +975,32 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 35px;
-            margin-bottom: 35px;
+            gap: 40px;
+            margin-bottom: 40px;
         }
         
         .footer-brand h3 {
             color: white;
-            font-size: 1.6em;
-            margin-bottom: 12px;
-            font-weight: 800;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 900;
         }
         
         .footer-brand p {
-            line-height: 1.7;
-            margin-bottom: 15px;
-            font-size: 0.95em;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            font-size: 1em;
         }
         
         .footer-social {
             display: flex;
-            gap: 12px;
-            margin-top: 15px;
+            gap: 15px;
+            margin-top: 20px;
         }
         
         .social-link {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             display: flex;
@@ -791,19 +1009,19 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
         
         .social-link:hover {
-            background: #667eea;
-            transform: translateY(-3px);
+            background: #6366f1;
+            transform: translateY(-5px);
         }
         
         .footer-links h4 {
             color: white;
-            font-size: 1.05em;
-            margin-bottom: 12px;
-            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 800;
         }
         
         .footer-links ul {
@@ -811,68 +1029,70 @@
         }
         
         .footer-links li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .footer-links a {
             color: rgba(255,255,255,0.7);
             text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.95em;
+            transition: all 0.3s ease;
+            font-size: 1em;
         }
         
         .footer-links a:hover {
             color: white;
+            padding-left: 5px;
         }
         
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 25px;
+            padding-top: 30px;
             text-align: center;
-            font-size: 0.9em;
+            font-size: 0.95em;
         }
         
         .footer-disclaimer {
             background: rgba(255,255,255,0.05);
-            padding: 18px;
-            border-radius: 12px;
-            margin-top: 18px;
-            font-size: 0.85em;
-            line-height: 1.7;
+            padding: 20px;
+            border-radius: 14px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            line-height: 1.8;
             text-align: left;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .floating-whatsapp {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 30px;
+            right: 30px;
             z-index: 1000;
             background: #25D366;
-            width: 58px;
-            height: 58px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            box-shadow: 0 6px 25px rgba(37,211,102,0.5);
             cursor: pointer;
             transition: all 0.3s ease;
             animation: bounce-subtle 3s infinite;
         }
         
         .floating-whatsapp:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+            transform: scale(1.15);
+            box-shadow: 0 8px 35px rgba(37,211,102,0.7);
         }
         
         .floating-whatsapp::before {
             content: '💬';
-            font-size: 1.7em;
+            font-size: 2em;
         }
         
         @keyframes bounce-subtle {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-10px); }
         }
 
         .sticky-cta-mobile {
@@ -882,9 +1102,15 @@
             left: 0;
             right: 0;
             background: white;
-            padding: 12px 20px;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            padding: 15px 20px;
+            box-shadow: 0 -6px 25px rgba(0,0,0,0.2);
             z-index: 999;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
         }
 
         .sticky-cta-mobile button {
@@ -892,12 +1118,17 @@
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
             border: none;
-            padding: 16px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 1.05em;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1em;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(16,185,129,0.3);
+            box-shadow: 0 6px 20px rgba(16,185,129,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .sticky-cta-mobile button:active {
+            transform: scale(0.98);
         }
 
         @media (max-width: 1024px) {
@@ -907,59 +1138,68 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
             .announcement-bar {
-                font-size: 0.8em;
-                padding: 8px 15px;
-            }
-
-            .trust-bar {
-                gap: 15px;
-                font-size: 0.75em;
+                font-size: 0.85em;
                 padding: 10px 15px;
             }
 
+            .trust-bar {
+                gap: 20px;
+                font-size: 0.8em;
+                padding: 12px 15px;
+            }
+
             .hero {
-                padding: 40px 20px 60px;
+                padding: 50px 20px 70px;
             }
 
             .hero-content h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
             
             .hero-content .subtitle {
-                font-size: 1.05em;
+                font-size: 1.15em;
             }
             
             .hero-stats {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 12px;
+                gap: 15px;
             }
 
             .hero-stat {
-                padding: 12px 8px;
+                padding: 15px 10px;
             }
 
             .hero-stat .number {
-                font-size: 1.6em;
+                font-size: 1.8em;
             }
 
             .hero-stat .label {
-                font-size: 0.75em;
+                font-size: 0.8em;
+            }
+
+            .cta-button-large {
+                font-size: 1.1em;
+                padding: 18px 35px;
             }
 
             .trust-badges {
                 font-size: 0.85em;
+                gap: 15px;
             }
             
             .section-title {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             .section-subtitle {
-                font-size: 1em;
+                font-size: 1.05em;
             }
 
             .steps-grid {
@@ -974,19 +1214,20 @@
             .founder-box {
                 flex-direction: column;
                 text-align: center;
-                padding: 30px;
-            }
-
-            .pricing-cards {
-                grid-template-columns: 1fr;
+                padding: 35px;
             }
 
             .pricing-card {
-                margin-bottom: 20px;
+                margin-bottom: 25px;
             }
 
             .pricing-card.featured {
                 order: -1;
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-8px) scale(1.02);
             }
             
             .comparison-table {
@@ -995,8 +1236,8 @@
 
             .comparison-table th,
             .comparison-table td {
-                padding: 12px;
-                font-size: 0.9em;
+                padding: 15px;
+                font-size: 0.95em;
             }
             
             .footer-content {
@@ -1004,22 +1245,22 @@
             }
             
             .floating-whatsapp {
-                bottom: 80px;
+                bottom: 90px;
                 right: 20px;
-                width: 52px;
-                height: 52px;
+                width: 56px;
+                height: 56px;
             }
 
             .floating-whatsapp::before {
-                font-size: 1.5em;
+                font-size: 1.6em;
             }
             
             .final-cta h2 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             .final-cta p {
-                font-size: 1.05em;
+                font-size: 1.15em;
             }
 
             .sticky-cta-mobile {
@@ -1029,30 +1270,40 @@
 
         @media (max-width: 480px) {
             .hero-content h1 {
-                font-size: 1.7em;
+                font-size: 1.8em;
             }
 
             .section-title {
-                font-size: 1.5em;
+                font-size: 1.6em;
+            }
+
+            .benefits-grid {
+                gap: 20px;
+            }
+
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="announcement-bar">
-        🎉 <span class="highlight">Launch Offer</span> - Save ₹200 on your first month! Limited time only.
+        🎉 <span class="highlight">Launch Dhamaka</span> - First month pe ₹200 discount! Jaldi karo, limited seats! 🔥
     </div>
 
     <div class="trust-bar">
-        <div class="trust-item">✓ <span>Made for Indians</span></div>
-        <div class="trust-item">✓ <span>No Gym Needed</span></div>
-        <div class="trust-item">✓ <span>30-Day Guarantee</span></div>
+        <div class="trust-item"><span>Indians ke liye</span></div>
+        <div class="trust-item"><span>No Gym Required</span></div>
+        <div class="trust-item"><span>30-Din Money Back</span></div>
+        <div class="trust-item"><span>Real Coaches</span></div>
     </div>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Get Fit at Home - No Gym Needed 🏠</h1>
-            <p class="subtitle">Personal fitness coaching designed for busy Indians. Home workouts + Indian diet plans. Just 15 minutes daily!</p>
+            <h1>Ghar Baithe Fit Ho Jao - Gym Ki Zaroorat Nahi! 🏠💪</h1>
+            <p class="subtitle">Busy Indians ke liye personal fitness coaching. Home workout + Indian diet plans. Bas 15 minute roz!</p>
             
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -1060,7 +1311,7 @@
                     <span class="label">Min Daily</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="number">₹33</span>
+                    <span class="number">₹20</span>
                     <span class="label">Per Day</span>
                 </div>
                 <div class="hero-stat">
@@ -1069,13 +1320,13 @@
                 </div>
             </div>
 
-            <button class="cta-button-large" onclick="openTallyForm()">
-                Start FREE Assessment →
+            <button class="cta-button-large" onclick="openFreeTrial()">
+                FREE Assessment Shuru Karo →
             </button>
 
             <div class="trust-badges">
-                <div class="trust-badge">No credit card required</div>
-                <div class="trust-badge">Cancel anytime</div>
+                <div class="trust-badge">Credit card nahi chahiye</div>
+                <div class="trust-badge">Kabhi bhi cancel karo</div>
                 <div class="trust-badge">100% Indian focused</div>
             </div>
         </div>
@@ -1084,11 +1335,16 @@
     <section class="founder-section">
         <div class="container">
             <div class="founder-box">
-                <img src="founder-photo.jpg" alt="Founder" class="founder-avatar" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;">
+                <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/founder-photo.jpg" 
+                     alt="Founder Photo" 
+                     class="founder-avatar" 
+                     style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 30px rgba(99,102,241,0.4); border: 4px solid white;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="founder-avatar" style="display: none;">👨‍⚕️</div>
                 <div class="founder-content">
-                    <h3>Built by Fitness Enthusiasts, For Indians</h3>
-                    <p class="credentials">Certified Fitness Coaches • Nutrition Advisors</p>
-                    <p>We started FitGenie because we struggled with the same problems - expensive gyms, foreign diet plans that don't work with roti-dal, and no time to commute. After helping friends and family get fit at home, we decided to make it accessible to all Indians. Real coaches, real results, honest pricing.</p>
+                    <h3>Fitness Lovers Ne Banaya, Indians Ke Liye</h3>
+                    <p class="credentials">Certified Fitness Coaches • Nutrition Experts • Made in India</p>
+                    <p>Humne FitGenie isliye banaya kyunki hum bhi wahi problems face karte the - expensive gym, foreign diet plans jo roti-dal ke saath kaam nahi karte, aur commute ka time nahi. Dosto aur family ko ghar pe fit karne ke baad, humne socha ki sab Indians ko yeh accessible hona chahiye. Real coaches, real results, honest pricing. 🇮🇳</p>
                 </div>
             </div>
         </div>
@@ -1097,28 +1353,28 @@
     <section class="how-it-works">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">How It Works</span>
+                <span class="section-label">Kaise Kaam Karta Hai</span>
                 <h2 class="section-title">Simple 3-Step Process</h2>
-                <p class="section-subtitle">Get started in minutes - no complicated setup needed</p>
+                <p class="section-subtitle">Bas 2 minute mein shuru ho jao - koi complicated setup nahi</p>
             </div>
 
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>FREE Assessment</h3>
-                    <p>Take our 2-minute questionnaire. Tell us your goals, fitness level, available time, and diet preferences. Completely free, no credit card needed.</p>
+                    <h3>FREE Assessment Lo</h3>
+                    <p>Hamara 2-minute questionnaire bharo. Apne goals, fitness level, available time aur diet preferences batao. Completely free, credit card ki zaroorat nahi.</p>
                 </div>
 
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3>Get Your Plan</h3>
-                    <p>Receive a personalized workout and meal timing guide via email and WhatsApp. Designed specifically for your Indian lifestyle and home space.</p>
+                    <h3>Apna Plan Pao</h3>
+                    <p>Personalized workout aur meal timing guide email aur WhatsApp pe milega. Specially aapki Indian lifestyle aur ghar ki space ke liye designed.</p>
                 </div>
 
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Start Training</h3>
-                    <p>Follow your daily 15-30 min workouts at home. Track progress, get weekly updates, and direct support from your coach whenever needed.</p>
+                    <h3>Training Shuru Karo</h3>
+                    <p>Daily 15-30 min workout ghar pe karo. Progress track karo, weekly updates lo, aur jab chahiye coach se directly baat karo.</p>
                 </div>
             </div>
         </div>
@@ -1128,25 +1384,25 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">The Problem</span>
-                <h2 class="section-title">Why Traditional Fitness Doesn't Work</h2>
-                <p class="section-subtitle">Sound familiar?</p>
+                <h2 class="section-title">Traditional Fitness Kaam Kyun Nahi Karti</h2>
+                <p class="section-subtitle">Ye sab problems familiar lagte hain?</p>
             </div>
 
             <div class="problem-grid">
                 <div class="problem-card">
                     <span class="problem-icon">💸</span>
-                    <h3>Expensive Gyms</h3>
-                    <p>₹5,000-15,000/month for membership. Personal trainers cost ₹10,000+ extra. Plus enrollment fees, maintenance charges. Most can't sustain this.</p>
+                    <h3>Bahut Mehenga Gym</h3>
+                    <p>₹5,000-15,000/month membership ke liye. Personal trainer alag se ₹10,000+ extra. Plus enrollment fees, maintenance charges. Most log afford nahi kar sakte long-term.</p>
                 </div>
                 <div class="problem-card">
                     <span class="problem-icon">🕐</span>
-                    <h3>No Time</h3>
-                    <p>Long work hours, family commitments, commute time. By the time you reach gym and return, 2+ hours gone. Exhausting and unsustainable.</p>
+                    <h3>Time Hi Nahi Milta</h3>
+                    <p>Long work hours, family commitments, travel time. Gym jaane aur wapas aane mein 2+ ghante khatam. Thakaan aur unsustainable hai yeh routine.</p>
                 </div>
                 <div class="problem-card">
                     <span class="problem-icon">🥘</span>
                     <h3>Foreign Diet Plans</h3>
-                    <p>Chicken breast, quinoa, protein shakes? Doesn't work with Indian food culture. Need guidance that respects your roti-dal-sabzi lifestyle.</p>
+                    <p>Chicken breast, quinoa, protein shakes? Indian food culture ke saath kaam nahi karta. Roti-dal-sabzi lifestyle ke saath guidance chahiye jo realistic ho.</p>
                 </div>
             </div>
         </div>
@@ -1155,9 +1411,9 @@
     <section class="benefits-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Why FitGenie</span>
-                <h2 class="section-title">Built for Indian Lifestyle</h2>
-                <p class="section-subtitle">Everything you need, nothing you don't</p>
+                <span class="section-label">Kyun FitGenie</span>
+                <h2 class="section-title">Indian Lifestyle Ke Liye Specially Banaya</h2>
+                <p class="section-subtitle">Jo chahiye woh sab, jo nahi chahiye woh nahi</p>
             </div>
 
             <div class="benefits-grid">
@@ -1165,24 +1421,23 @@
                     <div class="benefit-icon">🇮🇳</div>
                     <div class="benefit-content">
                         <h4>100% Indian Focused</h4>
-                        <p>Works with your existing diet - veg, non-veg, regional cuisines. Understands family dynamics and Indian home setups.</p>
+                        <p>Aapki existing diet ke saath kaam karta hai - veg, non-veg, regional cuisines. Family dynamics aur Indian ghar ki setting samajhte hain hum.</p>
                     </div>
                 </div>
 
                 <div class="benefit-item">
                     <div class="benefit-icon">🏠</div>
-                    <div class="benefit-icon">🏠</div>
                     <div class="benefit-content">
-                        <h4>Home Workouts Only</h4>
-                        <p>6x6 feet space is enough. Mumbai flat, PG room, anywhere. No equipment needed, just your body weight.</p>
+                        <h4>Sirf Ghar Pe Workout</h4>
+                        <p>6x6 feet jagah kaafi hai. Mumbai flat ho, PG room ho, kahin bhi. Koi equipment nahi chahiye, bas apka body weight.</p>
                     </div>
                 </div>
 
                 <div class="benefit-item">
                     <div class="benefit-icon">⏱️</div>
                     <div class="benefit-content">
-                        <h4>15 Minutes Daily</h4>
-                        <p>Short, effective workouts that fit your schedule. Morning, evening, lunch break - your choice. Consistency over duration.</p>
+                        <h4>Daily 15 Minutes</h4>
+                        <p>Chhote, effective workouts jo aapke schedule mein fit ho jaye. Morning, evening, lunch break - aapki choice. Consistency over duration.</p>
                     </div>
                 </div>
 
@@ -1190,7 +1445,7 @@
                     <div class="benefit-icon">💰</div>
                     <div class="benefit-content">
                         <h4>Actually Affordable</h4>
-                        <p>₹999/month (₹33/day). Less than one movie ticket. Professional coaching accessible to everyone.</p>
+                        <p>₹599/month se shuru (₹20/day). Ek movie ticket se kam. Professional coaching sabke liye accessible.</p>
                     </div>
                 </div>
 
@@ -1198,7 +1453,7 @@
                     <div class="benefit-icon">📱</div>
                     <div class="benefit-content">
                         <h4>WhatsApp + Email</h4>
-                        <p>No complicated apps. Plans delivered via WhatsApp and email. Works on any phone, low data usage.</p>
+                        <p>Complicated apps nahi. Plans WhatsApp aur email pe milte hain. Kisi bhi phone pe chalega, kam data usage.</p>
                     </div>
                 </div>
 
@@ -1206,15 +1461,15 @@
                     <div class="benefit-icon">👨‍🏫</div>
                     <div class="benefit-content">
                         <h4>Real Human Coaches</h4>
-                        <p>Talk directly to certified coaches. Not bots. Get personalized advice, form corrections, and motivation.</p>
+                        <p>Certified coaches se directly baat karo. Bots nahi. Personalized advice, form corrections, aur motivation milega.</p>
                     </div>
                 </div>
 
                 <div class="benefit-item">
                     <div class="benefit-icon">🛡️</div>
                     <div class="benefit-content">
-                        <h4>Safety First</h4>
-                        <p>Injury prevention focus. Proper form tutorials. Modifications for all fitness levels. Start slow, progress safely.</p>
+                        <h4>Safety Pehle</h4>
+                        <p>Injury prevention pe focus. Proper form tutorials. Sabhi fitness levels ke liye modifications. Slowly shuru karo, safely progress karo.</p>
                     </div>
                 </div>
 
@@ -1222,7 +1477,7 @@
                     <div class="benefit-icon">🌐</div>
                     <div class="benefit-content">
                         <h4>Regional Languages</h4>
-                        <p>Support in Hindi, English, Hinglish. More regional languages coming soon based on demand.</p>
+                        <p>Hindi, English, Hinglish mein support. Zyada regional languages jald aa rahe hain demand ke basis pe.</p>
                     </div>
                 </div>
             </div>
@@ -1233,8 +1488,8 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Comparison</span>
-                <h2 class="section-title">FitGenie vs Alternatives</h2>
-                <p class="section-subtitle">See what makes us different</p>
+                <h2 class="section-title">FitGenie vs Doosre Options</h2>
+                <p class="section-subtitle">Dekho hum mein kya different hai</p>
             </div>
 
             <div class="comparison-table">
@@ -1250,7 +1505,7 @@
                     <tbody>
                         <tr>
                             <td class="feature-name">Monthly Cost</td>
-                            <td class="highlight-col"><strong>₹999</strong></td>
+                            <td class="highlight-col"><strong>₹599-999</strong></td>
                             <td>₹15,000+</td>
                             <td>₹1,500-3,000</td>
                         </tr>
@@ -1261,7 +1516,7 @@
                             <td><span class="check-no">✗</span></td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Works at Home</td>
+                            <td class="feature-name">Ghar Pe Kaam Karta</td>
                             <td class="highlight-col"><span class="check-yes">✓</span></td>
                             <td><span class="check-no">✗</span></td>
                             <td><span class="check-yes">✓</span></td>
@@ -1273,25 +1528,25 @@
                             <td><span class="check-no">✗</span></td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Equipment Needed</td>
-                            <td class="highlight-col">None</td>
-                            <td>All gym equipment</td>
-                            <td>Some</td>
+                            <td class="feature-name">Equipment Chahiye?</td>
+                            <td class="highlight-col">Bilkul Nahi</td>
+                            <td>Saara Gym</td>
+                            <td>Kuch</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Time Required</td>
+                            <td class="feature-name">Time Kitna Lagta</td>
                             <td class="highlight-col">15-30 min</td>
-                            <td>2+ hours (with travel)</td>
+                            <td>2+ hours (travel ke saath)</td>
                             <td>30-60 min</td>
                         </tr>
                         <tr>
                             <td class="feature-name">Flexibility</td>
-                            <td class="highlight-col">Anytime, anywhere</td>
+                            <td class="highlight-col">Kahi bhi, kabhi bhi</td>
                             <td>Fixed timings</td>
                             <td>Flexible</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Cancel Anytime</td>
+                            <td class="feature-name">Kabhi Bhi Cancel</td>
                             <td class="highlight-col"><span class="check-yes">✓</span></td>
                             <td><span class="check-no">✗</span> (Annual lock)</td>
                             <td><span class="check-yes">✓</span></td>
@@ -1307,36 +1562,36 @@
             <div class="section-header">
                 <span class="section-label">Pricing</span>
                 <h2 class="section-title">Simple, Honest Pricing</h2>
-                <p class="section-subtitle">Try free, upgrade when ready. No hidden charges.</p>
+                <p class="section-subtitle">Pehle free try karo, jab ready ho tab upgrade karo. Koi hidden charges nahi.</p>
             </div>
 
-            <div class="pricing-cards" style="grid-template-columns: 1fr 1fr 1fr; max-width: 1100px;">
+            <div class="pricing-cards">
                 <div class="pricing-card">
                     <h3>FREE Trial</h3>
                     <div class="price">
                         <span class="currency">₹</span>0
                         <span class="period">/one-time</span>
                     </div>
-                    <p class="price-detail">Try before you commit!</p>
+                    <p class="price-detail">Pehle try karo commitment se pehle!</p>
                     <ul>
                         <li>Complete fitness assessment</li>
-                        <li>ONE personalized workout plan</li>
+                        <li>EK personalized workout plan</li>
                         <li>Basic meal timing guide</li>
                         <li>Exercise demo videos</li>
                         <li>Community access</li>
                     </ul>
-                    <button class="pricing-cta" onclick="openTallyForm()">Start FREE Trial</button>
-                    <p class="money-back">⚠️ No credit card required</p>
+                    <button class="pricing-cta" onclick="openFreeTrial()">FREE Trial Shuru Karo</button>
+                    <p class="money-back">⚠️ Credit card nahi chahiye</p>
                 </div>
 
                 <div class="pricing-card featured">
-                    <div class="popular-badge">⚡ MOST POPULAR</div>
+                    <div class="popular-badge">⚡ SABSE POPULAR</div>
                     <h3>Basic Plan</h3>
                     <div class="price">
                         <span class="currency">₹</span>599
                         <span class="period">/month</span>
                     </div>
-                    <p class="price-detail">₹20/day - Best for beginners!</p>
+                    <p class="price-detail">₹20/day - Beginners ke liye best!</p>
                     <ul>
                         <li>Weekly updated workout plans</li>
                         <li>Indian meal timing guidance</li>
@@ -1346,8 +1601,8 @@
                         <li>Exercise modifications</li>
                         <li>Monthly progress review</li>
                     </ul>
-                    <button class="pricing-cta" onclick="openTallyForm()">Get Basic Plan</button>
-                    <p class="money-back">💯 30-Day Money Back</p>
+                    <button class="pricing-cta" onclick="openPremiumPlan()">Basic Plan Lo</button>
+                    <p class="money-back">💯 30-Din Money Back</p>
                 </div>
 
                 <div class="pricing-card">
@@ -1356,9 +1611,9 @@
                         <span class="currency">₹</span>999
                         <span class="period">/month</span>
                     </div>
-                    <p class="price-detail">₹33/day - For serious results</p>
+                    <p class="price-detail">₹33/day - Serious results ke liye</p>
                     <ul>
-                        <li><strong>Everything in Basic, PLUS:</strong></li>
+                        <li><strong>Basic mein sab, PLUS:</strong></li>
                         <li>Complete Indian nutrition plan</li>
                         <li>Direct WhatsApp coach access</li>
                         <li>24hr response time</li>
@@ -1369,14 +1624,14 @@
                         <li>Regional language support</li>
                         <li>Priority support</li>
                     </ul>
-                    <button class="pricing-cta" onclick="openTallyForm()">Get Premium</button>
-                    <p class="money-back">💯 30-Day Money Back</p>
+                    <button class="pricing-cta" onclick="openPremiumPlan()">Premium Lo</button>
+                    <p class="money-back">💯 30-Din Money Back</p>
                 </div>
             </div>
 
             <div class="guarantee-box">
                 <h4>🛡️ 100% Risk-Free Guarantee</h4>
-                <p>Try Premium for 30 days. If you're not satisfied for ANY reason, we'll refund every rupee. No questions asked. We're confident you'll love it.</p>
+                <p>Premium ko 30 din try karo. Agar KISI BHI reason se satisfied nahi ho, toh hum har rupee refund kar denge. Koi sawaal nahi puchenge. Hume confidence hai ki aapko pasand aayega.</p>
             </div>
         </div>
     </section>
@@ -1385,89 +1640,98 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">FAQs</span>
-                <h2 class="section-title">Common Questions</h2>
-                <p class="section-subtitle">Everything you need to know</p>
+                <h2 class="section-title">Common Sawal-Jawab</h2>
+                <p class="section-subtitle">Jo aapko jaanna chahiye</p>
             </div>
 
             <div class="faq-container">
-                <div class="faq-item active">
+                <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        I'm a complete beginner. Will this work for me?
+                        Main complete beginner hoon. Kya yeh mere liye kaam karega?
+                        <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Absolutely! Most of our members are beginners. We start with basics and progress gradually. You'll learn proper form, build strength slowly, and avoid injuries. No judgement, just consistent progress.
-                    </div>
-                </div>
-
-                <div class="faq-item active">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        Do I need any equipment?
-                    </div>
-                    <div class="faq-answer">
-                        No! All exercises use your body weight. You just need a 6x6 feet space. If you have dumbbells or resistance bands, great - but they're not required.
-                    </div>
-                </div>
-
-                <div class="faq-item active">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        How quickly will I see results?
-                    </div>
-                    <div class="faq-answer">
-                        Results vary by person. Generally, you'll feel more energetic in 2-3 weeks. Visible body changes take 2-3 months with consistency. Remember - sustainable, healthy results take time. Quick fixes don't last.
+                        Bilkul! Hamare zyada tar members beginners hain. Hum basics se shuru karte hain aur gradually progress karte hain. Aap proper form seekhoge, strength slowly build karoge, aur injuries se bachoge. Koi judgement nahi, sirf consistent progress.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        I'm very busy. Will 15 minutes really work?
+                        Koi equipment chahiye kya?
+                        <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Yes! Consistency beats duration. 15 minutes daily is better than 1 hour twice a week. Start with 15 min, increase when you have time. We design efficient workouts that deliver results.
+                        Nahi! Saare exercises body weight use karte hain. Bas aapko 6x6 feet space chahiye. Agar dumbbells ya resistance bands hain toh achha hai - par required nahi hain.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        I'm vegetarian. Will the meal plan work?
+                        Kitni jaldi results dikhenge?
+                        <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Definitely! We specialize in Indian vegetarian diets. Dal, paneer, dahi, sabzi, fruits - we'll optimize what you already eat. Regional preferences (South Indian, Gujarati, Bengali, etc.) fully covered.
+                        Results har insaan ke liye alag hote hain. Generally, 2-3 hafte mein aap zyada energetic feel karoge. Body mein visible changes 2-3 mahine mein dikhte hain consistency ke saath. Yaad rakho - sustainable, healthy results time lete hain. Quick fixes kaam nahi karte.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        I have health issues (BP, diabetes, PCOS). Can I do this?
+                        Main bahut busy hoon. Kya 15 minutes sach mein kaam karega?
+                        <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Please consult your doctor first! If cleared, we'll provide condition-specific modifications. Many members exercise safely with health conditions. Your safety is our top priority - never skip doctor consultation.
+                        Haan! Consistency duration se better hai. Roz 15 minutes, hafte mein 2 baar 1 hour se better hai. 15 min se shuru karo, jab time mile toh badha lena. Hum efficient workouts design karte hain jo results dete hain.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        How do I get support? Is there a coach I can talk to?
+                        Main vegetarian hoon. Kya meal plan mere liye kaam karega?
+                        <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Premium members get direct WhatsApp and email access to certified coaches. Ask questions anytime, get form feedback, share concerns. We're real humans who care about your progress!
+                        Definitely! Hum Indian vegetarian diets mein specialize karte hain. Dal, paneer, dahi, sabzi, fruits - jo aap pehle se khate ho usko optimize karenge. Regional preferences (South Indian, Gujarati, Bengali, etc.) fully covered hain.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        What if I don't like it? Can I get a refund?
+                        Mujhe health issues hain (BP, diabetes, PCOS). Kya main yeh kar sakta hoon?
+                        <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Yes! 30-day money-back guarantee. If Premium isn't for you, email us within 30 days for a full refund. No questions, no hassle. We want happy members, not trapped ones.
+                        Pehle apne doctor se zaroor consult karo! Agar unka clearance mil jaaye, toh hum condition-specific modifications provide karenge. Kaafi members health conditions ke saath safely exercise karte hain. Aapki safety hamari top priority hai - doctor consultation kabhi skip mat karo.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        How is this different from YouTube workout videos?
+                        Support kaise milega? Kya koi coach se baat kar sakta hoon?
+                        <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        YouTube is great but generic. We personalize for YOUR fitness level, goals, time availability, home space, and Indian diet. Plus you get progressive plans that adapt, direct coach support, and accountability. Not one-size-fits-all.
+                        Premium members ko direct WhatsApp aur email access milta hai certified coaches ka. Kabhi bhi sawaal pucho, form feedback lo, concerns share karo. Hum real humans hain jo aapki progress ki care karte hain!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Agar pasand nahi aaya? Refund mil sakta hai?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Haan! 30-din money-back guarantee hai. Agar Premium aapke liye nahi hai, toh 30 din ke andar email karo full refund ke liye. Koi sawaal nahi, koi problem nahi. Hume happy members chahiye, trapped nahi.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        YouTube workout videos se yeh kaise different hai?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        YouTube bahut achha hai par generic hai. Hum AAPKE fitness level, goals, time availability, ghar ki space, aur Indian diet ke liye personalize karte hain. Plus aapko progressive plans milte hain jo adapt hote hain, direct coach support, aur accountability. One-size-fits-all nahi hai.
                     </div>
                 </div>
             </div>
@@ -1476,18 +1740,18 @@
 
     <section class="final-cta">
         <div class="final-cta-content">
-            <h2>Ready to Start Your Fitness Journey?</h2>
-            <p>Join hundreds of Indians getting fit at home. No gym, no equipment, no excuses.</p>
+            <h2>Ready Ho Apni Fitness Journey Shuru Karne Ke Liye?</h2>
+            <p>Sau-sau Indians join kar rahe hain jo ghar pe fit ho rahe hain. No gym, no equipment, no bahane.</p>
 
-            <button class="cta-primary" onclick="openTallyForm()">
-                Start FREE Assessment Now →
+            <button class="cta-primary" onclick="openFreeTrial()">
+                <span style="position: relative; z-index: 1;">FREE Assessment Ab Shuru Karo →</span>
             </button>
 
-            <div style="margin-top: 25px; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; opacity: 0.95; font-size: 0.95em;">
-                <div>✓ No credit card needed</div>
+            <div style="margin-top: 30px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; opacity: 0.98; font-size: 1em;">
+                <div>✓ Credit card nahi chahiye</div>
                 <div>✓ 2-minute setup</div>
-                <div>✓ Cancel anytime</div>
-                <div>✓ 30-day guarantee</div>
+                <div>✓ Kabhi bhi cancel</div>
+                <div>✓ 30-din guarantee</div>
             </div>
         </div>
     </section>
@@ -1496,12 +1760,12 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <h3>FitGenie</h3>
-                <p>Personal fitness coaching designed for Indians. Get fit at home - the smart, affordable way! 🇮🇳</p>
+                <p>Indians ke liye personal fitness coaching. Ghar pe fit ho jao - smart aur affordable tarike se! 🇮🇳</p>
                 <div class="footer-social">
                     <a href="#" class="social-link" aria-label="Facebook">📘</a>
                     <a href="https://www.instagram.com/zeuss_ai" target="_blank" class="social-link" aria-label="Instagram">📷</a>
                     <a href="#" class="social-link" aria-label="Twitter">🐦</a>
-                    <a href="https://tally.so/r/3q2WLO" class="social-link" aria-label="Contact">💬</a>
+                    <a href="https://tally.so/r/3q2WLO" target="_blank" class="social-link" aria-label="Contact">💬</a>
                 </div>
             </div>
 
@@ -1509,8 +1773,8 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#" onclick="openTallyForm()">Get Started</a></li>
-                    <li><a href="https://tally.so/r/3q2WLO">Contact Us</a></li>
+                    <li><a href="#" onclick="openFreeTrial(); return false;">Get Started</a></li>
+                    <li><a href="https://tally.so/r/3q2WLO" target="_blank">Contact Us</a></li>
                     <li><a href="#">About Us</a></li>
                 </ul>
             </div>
@@ -1518,7 +1782,7 @@
             <div class="footer-links">
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="https://tally.so/r/3q2WLO">Help Center</a></li>
+                    <li><a href="https://tally.so/r/3q2WLO" target="_blank">Help Center</a></li>
                     <li><a href="#">Terms of Service</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Refund Policy</a></li>
@@ -1528,55 +1792,86 @@
             <div class="footer-links">
                 <h4>Contact</h4>
                 <ul>
-                    <li><a href="https://tally.so/r/3q2WLO">Get in Touch</a></li>
+                    <li><a href="https://tally.so/r/3q2WLO" target="_blank">Get in Touch</a></li>
                     <li><a href="mailto:support@fitgenie.in">support@fitgenie.in</a></li>
-                    <li>Response within 24 hours</li>
+                    <li>24 ghante ke andar response</li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <div class="footer-disclaimer">
-                <p style="font-weight: 700; margin-bottom: 8px; color: #fbbf24;">⚠️ Important Medical Disclaimer:</p>
+                <p style="font-weight: 700; margin-bottom: 10px; color: #fbbf24;">⚠️ Important Medical Disclaimer:</p>
                 <p>
-                    FitGenie provides general fitness information only - NOT medical advice, diagnosis, or treatment. 
-                    Always consult your doctor before starting any fitness or nutrition program, especially if you have medical conditions, injuries, are pregnant, or take medications. 
-                    Stop exercising immediately if you experience pain, dizziness, or discomfort, and consult a healthcare professional. 
-                    Individual results vary based on consistency, genetics, lifestyle, and starting point. We don't guarantee specific results. 
-                    For users 18+ only. By using our service, you acknowledge these disclaimers.
+                    FitGenie sirf general fitness information deta hai - medical advice, diagnosis, ya treatment NAHI. 
+                    Koi bhi fitness ya nutrition program shuru karne se pehle apne doctor se zaroor consult karo, khaas kar agar medical conditions, injuries hain, pregnant ho, ya medications lete ho. 
+                    Agar pain, dizziness, ya discomfort feel ho toh turant exercise band karo aur healthcare professional se consult karo. 
+                    Individual results alag hote hain consistency, genetics, lifestyle aur starting point ke basis pe. Hum specific results ki guarantee nahi dete. 
+                    Sirf 18+ users ke liye. Hamari service use karke, aap in disclaimers ko acknowledge karte ho.
                 </p>
             </div>
 
-            <p style="margin-top: 25px; font-size: 0.95em;">
+            <p style="margin-top: 30px; font-size: 1em;">
                 © 2024 FitGenie. Made in India with ❤️<br>
-                All rights reserved. Empowering Indians to get fit at home.
+                All rights reserved. Indians ko ghar pe fit karna hamara mission hai.
             </p>
         </div>
     </footer>
 
-    <div class="floating-whatsapp" onclick="openTallyForm()" aria-label="Start chat"></div>
+    <div class="floating-whatsapp" onclick="openContact()" aria-label="Start chat"></div>
 
     <div class="sticky-cta-mobile">
-        <button onclick="openTallyForm()">Start FREE Assessment →</button>
+        <button onclick="openFreeTrial()">FREE Assessment Shuru Karo →</button>
     </div>
 
     <script>
-        // Open Tally Form
-        function openTallyForm() {
+        // Open Free Trial Form (for free trial clicks)
+        function openFreeTrial() {
             window.open('https://tally.so/r/mV2dNa', '_blank');
             
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'cta_click', {
+                gtag('event', 'free_trial_click', {
                     'event_category': 'engagement',
-                    'event_label': 'open_form'
+                    'event_label': 'free_trial_form'
                 });
             }
         }
 
-        // FAQ Toggle
+        // Open Premium/Contact Form (for premium plan and contact clicks)
+        function openPremiumPlan() {
+            window.open('https://tally.so/r/3q2WLO', '_blank');
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'premium_plan_click', {
+                    'event_category': 'conversion',
+                    'event_label': 'premium_form'
+                });
+            }
+        }
+
+        // Open Contact Form (for WhatsApp button and general contact)
+        function openContact() {
+            window.open('https://tally.so/r/3q2WLO', '_blank');
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'contact_click', {
+                    'event_category': 'engagement',
+                    'event_label': 'contact_form'
+                });
+            }
+        }
+
+        // FAQ Toggle with smooth animation
         function toggleFAQ(element) {
             const faqItem = element.parentElement;
             const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQs for better UX
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
             
             if (isActive) {
                 faqItem.classList.remove('active');
@@ -1592,7 +1887,7 @@
             }
         }
 
-        // Smooth Scroll
+        // Smooth Scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
@@ -1609,20 +1904,28 @@
             });
         });
 
-        // Show sticky mobile CTA on scroll
+        // Show/Hide sticky mobile CTA on scroll with animation
         const stickyCTA = document.querySelector('.sticky-cta-mobile');
+        let lastScroll = 0;
         
         window.addEventListener('scroll', function() {
             if (window.innerWidth <= 768) {
-                if (window.pageYOffset > 500) {
-                    stickyCTA.style.transform = 'translateY(0)';
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll > 500) {
+                    if (currentScroll > lastScroll) {
+                        // Scrolling down
+                        stickyCTA.style.transform = 'translateY(0)';
+                    }
                 } else {
                     stickyCTA.style.transform = 'translateY(100%)';
                 }
+                
+                lastScroll = currentScroll;
             }
         });
 
-        // Analytics
+        // Analytics tracking
         if (typeof gtag !== 'undefined') {
             // Track scroll depth
             let scrollTracked = { 25: false, 50: false, 75: false, 100: false };
@@ -1641,7 +1944,7 @@
                 });
             });
 
-            // Track CTA clicks
+            // Track all CTA button clicks
             document.querySelectorAll('.cta-primary, .pricing-cta, .cta-button-large').forEach(button => {
                 button.addEventListener('click', function() {
                     gtag('event', 'cta_clicked', {
@@ -1651,11 +1954,68 @@
                 });
             });
 
+            // Track pricing section visibility
+            const pricingSection = document.querySelector('.pricing-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        gtag('event', 'pricing_viewed', {
+                            'event_category': 'engagement',
+                            'event_label': 'pricing_section'
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            if (pricingSection) {
+                observer.observe(pricingSection);
+            }
+
             // Page view
             gtag('event', 'page_view', {
-                'page_title': 'FitGenie - Home Fitness Coaching',
+                'page_title': 'FitGenie - Ghar Baithe Fit Ho Jao',
                 'page_location': window.location.href
             });
         }
 
-        // Structured Data for
+        // Add entrance animations on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.step-card, .problem-card, .benefit-item, .pricing-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        };
+
+        // Initialize animations when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', animateOnScroll);
+        } else {
+            animateOnScroll();
+        }
+
+        // Prevent form submission on Enter key in the page
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html> Thak
