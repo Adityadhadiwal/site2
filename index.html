@@ -1286,9 +1286,233 @@
                 text-align: center;
             }
         }
+
+        /* Navigation Menu Styles */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            z-index: 2000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #6366f1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo span {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu li a {
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu li a:hover {
+            color: #6366f1;
+        }
+
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16,185,129,0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16,185,129,0.4);
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #1f2937;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Add spacing for fixed nav */
+        body {
+            padding-top: 70px;
+        }
+
+        .announcement-bar {
+            top: 70px;
+        }
+
+        .trust-bar {
+            margin-top: 0;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 30px 20px;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+                gap: 0;
+                align-items: flex-start;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 15px 0;
+            }
+
+            .nav-menu li:last-child {
+                border-bottom: none;
+                margin-top: 10px;
+            }
+
+            .nav-menu li a {
+                display: block;
+                width: 100%;
+                font-size: 1.1em;
+            }
+
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+                display: block;
+            }
+
+            body {
+                padding-top: 60px;
+            }
+
+            .announcement-bar {
+                top: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo {
+                font-size: 1.3em;
+            }
+
+            .nav-container {
+                padding: 12px 15px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span>FitGenie</span> 🤖
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#comparison">Compare</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#" class="nav-cta" onclick="openFreeTrial(); return false;">Get Started Free</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
     <div class="announcement-bar">
         🎉 <span class="highlight">Launch Dhamaka</span> - First month pe ₹200 discount! Jaldi karo, limited seats! 🔥
     </div>
@@ -1350,7 +1574,7 @@
         </div>
     </section>
 
-    <section class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Kaise Kaam Karta Hai</span>
@@ -1408,7 +1632,7 @@
         </div>
     </section>
 
-    <section class="benefits-section">
+    <section class="benefits-section" id="benefits">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Kyun FitGenie</span>
@@ -1508,7 +1732,7 @@
         </div>
     </section>
 
-    <section class="comparison-section">
+    <section class="comparison-section" id="comparison">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Comparison</span>
@@ -1672,7 +1896,7 @@
         </div>
     </section>
 
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">FAQs</span>
@@ -2061,6 +2285,49 @@
             if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
                 e.preventDefault();
             }
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Hide/Show navigation on scroll
+        let lastScrollTop = 0;
+        const navHeader = document.querySelector('.nav-header');
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                navHeader.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                navHeader.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
         });
     </script>
 </body>
