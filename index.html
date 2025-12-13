@@ -1506,7 +1506,7 @@
                 <h4>Contact</h4>
                 <ul>
                     <li><a href="https://tally.so/r/3q2WLO" target="_blank">Get in Touch</a></li>
-                    <li><a href="mailto:support@fitgenie.in">support@fitgenie.in</a></li>
+                    <li><a href="mailto:support@fitgenie.in">prozeuss99@gmail.com</a></li>
                     <li>Response within 24 hours</li>
                 </ul>
             </div>
@@ -1537,123 +1537,56 @@
         <button onclick="openFreeTrial()">Start Your Challenge →</button>
     </div>
 
-    <script>
-        function openFreeTrial() {
-            window.open('https://tally.so/r/3q2WLO', '_blank');
-            
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'challenge_start_click', {
-                    'event_category': 'engagement',
-                    'event_label': 'challenge_form'
-                });
-            }
-        }
+<script>
+    function openFreeTrial() {
+        window.open('https://tally.so/r/3q2WLO', '_blank');
+    }
 
-        function openContact() {
-            window.open('https://tally.so/r/3q2WLO', '_blank');
-            
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'contact_click', {
-                    'event_category': 'engagement',
-                    'event_label': 'contact_form'
-                });
-            }
-        }
+    function openContact() {
+        window.open('https://tally.so/r/3q2WLO', '_blank');
+    }
 
-        function toggleFAQ(element) {
-            const faqItem = element.parentElement;
-            const isActive = faqItem.classList.contains('active');
-            
-            document.querySelectorAll('.faq-item').forEach(item => {
-                if (item !== faqItem) {
-                    item.classList.remove('active');
+    function toggleFAQ(element) {
+        const faqItem = element.parentElement;
+        faqItem.classList.toggle('active');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href.includes('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
-            });
-            
-            if (isActive) {
-                faqItem.classList.remove('active');
-            } else {
-                faqItem.classList.add('active');
-            }
-
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'faq_interaction', {
-                    'event_category': 'engagement',
-                    'event_label': element.textContent.trim().substring(0, 50)
-                });
-            }
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && href.includes('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-
-        const stickyCTA = document.querySelector('.sticky-cta-mobile');
-        let lastScroll = 0;
-        
-        window.addEventListener('scroll', function() {
-            if (window.innerWidth <= 768) {
-                const currentScroll = window.pageYOffset;
-                
-                if (currentScroll > 500) {
-                    if (currentScroll > lastScroll) {
-                        stickyCTA.style.transform = 'translateY(0)';
-                    }
-                } else {
-                    stickyCTA.style.transform = 'translateY(100%)';
-                }
-                
-                lastScroll = currentScroll;
             }
         });
+    });
 
-        if (typeof gtag !== 'undefined') {
-            let scrollTracked = { 25: false, 50: false, 75: false, 100: false };
+    const stickyCTA = document.querySelector('.sticky-cta-mobile');
+    let lastScroll = 0;
 
-            window.addEventListener('scroll', function() {
-                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                
-                Object.keys(scrollTracked).forEach(depth => {
-                    if (scrollPercent >= parseInt(depth) && !scrollTracked[depth]) {
-                        scrollTracked[depth] = true;
-                        gtag('event', 'scroll_depth', {
-                            'event_category': 'engagement',
-                            'value': parseInt(depth)
-                        });
-                    }
-                });
+    window.addEventListener('scroll', function () {
+        if (window.innerWidth <= 768) {
+            const currentScroll = window.pageYOffset;
+            stickyCTA.style.transform = currentScroll > 500 ? 'translateY(0)' : 'translateY(100%)';
+            lastScroll = currentScroll;
+        }
+    });
+
+    // Pricing section tracking (safe)
+    const pricingSection = document.querySelector('.pricing-section');
+    if (pricingSection && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    observer.unobserve(entry.target);
+                }
             });
+        }, { threshold: 0.5 });
 
-            document.querySelectorAll('.cta-primary, .pricing-cta, .cta-button-large').forEach(button => {
-                button.addEventListener('click', function() {
-                    gtag('event', 'cta_clicked', {
-                        'event_category': 'conversion',
-                        'event_label': this.textContent.trim()
-                    });
-                });
-            });
+        observer.observe(pricingSection);
+    }
+</script>
 
-            const pricingSection = document.querySelector('.pricing-section');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        gtag('event', 'pricing_viewed', {
-                            'event_category': 'engagement',
-                            'event_label': 'pricing_section'
-                        });
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
