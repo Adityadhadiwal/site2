@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitGenie - AI + Human Coaching | ₹599/month se shuru</title>
-    <meta name="description" content="AI Technology + Real Coaches. Ghar pe workout + Indian diet plan. No gym, no equipment. FREE trial se start karo!" />
+    <title>FitGenie - AI + Human Coaching | ₹699/month</title>
+    <meta name="description" content="Not a fitness app. A consistency challenge system that won't let you quit until fitness becomes your habit." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -93,8 +93,7 @@
             top: 0; left: 0; right: 0; bottom: 0;
             background: 
                 radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 40%);
             animation: gradientShift 15s ease infinite;
         }
 
@@ -225,10 +224,6 @@
             box-shadow: 0 20px 50px rgba(16,185,129,0.6);
         }
 
-        .cta-button-large:active {
-            transform: translateY(-2px) scale(1.02);
-        }
-
         .trust-badges {
             display: flex;
             align-items: center;
@@ -269,75 +264,17 @@
             font-weight: 900;
         }
 
-        .founder-section {
-            padding: 80px 20px;
-            background: linear-gradient(to bottom, #ffffff, #f9fafb);
-        }
-
-        .founder-box {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 24px;
-            padding: 50px;
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-            border: 1px solid #e5e7eb;
-            transition: all 0.4s ease;
-        }
-
-        .founder-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
-        }
-
-        .founder-avatar {
-            width: 140px;
-            height: 140px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 50%;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5em;
-            color: white;
-            box-shadow: 0 10px 30px rgba(99,102,241,0.4);
-            border: 4px solid white;
-        }
-
-        .founder-content h3 {
-            font-size: 1.8em;
-            color: #1f2937;
-            margin-bottom: 12px;
-            font-weight: 800;
-        }
-
-        .founder-content .credentials {
-            color: #6366f1;
-            font-weight: 700;
-            margin-bottom: 18px;
-            font-size: 1.05em;
-        }
-
-        .founder-content p {
-            color: #4b5563;
-            line-height: 1.8;
-            font-size: 1.05em;
-        }
-
-        .how-it-works {
-            padding: 80px 20px;
-            background: #f9fafb;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
-        
+
+        .moat-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
         .section-header {
             text-align: center;
             margin-bottom: 60px;
@@ -374,70 +311,15 @@
             line-height: 1.6;
         }
 
-        .steps-grid {
+        .moat-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 35px;
-            max-width: 1100px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .step-card {
-            text-align: center;
-            padding: 40px 30px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            border: 2px solid transparent;
-        }
-
-        .step-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(99,102,241,0.2);
-            border-color: #6366f1;
-        }
-
-        .step-number {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            font-weight: 900;
-            margin: 0 auto 25px;
-            box-shadow: 0 8px 20px rgba(99,102,241,0.4);
-        }
-
-        .step-card h3 {
-            font-size: 1.5em;
-            color: #1f2937;
-            margin-bottom: 15px;
-            font-weight: 800;
-        }
-
-        .step-card p {
-            color: #6b7280;
-            line-height: 1.7;
-            font-size: 1.05em;
-        }
-
-        .problem-section {
-            padding: 80px 20px;
-            background: white;
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        
-        .problem-card {
+        .moat-card {
             background: linear-gradient(to bottom right, #f9fafb, #ffffff);
             padding: 40px;
             border-radius: 20px;
@@ -448,167 +330,45 @@
             overflow: hidden;
         }
 
-        .problem-card::before {
+        .moat-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #ef4444, #f59e0b);
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
         
-        .problem-card:hover::before {
+        .moat-card:hover::before {
             transform: scaleX(1);
         }
 
-        .problem-card:hover {
+        .moat-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 45px rgba(0,0,0,0.15);
             border-color: #6366f1;
         }
         
-        .problem-icon {
+        .moat-icon {
             font-size: 3em;
             margin-bottom: 20px;
             display: block;
-            filter: grayscale(0.3);
         }
         
-        .problem-card h3 {
+        .moat-card h3 {
             font-size: 1.5em;
             color: #1f2937;
             margin-bottom: 15px;
             font-weight: 800;
         }
         
-        .problem-card p {
+        .moat-card p {
             color: #6b7280;
             line-height: 1.8;
             font-size: 1.05em;
-        }
-
-        .benefits-section {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            max-width: 1000px;
-            margin: 60px auto 0;
-        }
-
-        .benefit-item {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 25px rgba(99,102,241,0.15);
-            border-color: #6366f1;
-        }
-
-        .benefit-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.7em;
-            flex-shrink: 0;
-            box-shadow: 0 6px 15px rgba(99,102,241,0.3);
-        }
-
-        .benefit-content h4 {
-            font-size: 1.2em;
-            color: #1f2937;
-            margin-bottom: 8px;
-            font-weight: 800;
-        }
-
-        .benefit-content p {
-            color: #6b7280;
-            font-size: 1em;
-            line-height: 1.6;
-        }
-
-        .comparison-section {
-            padding: 80px 20px;
-            background: white;
-        }
-        
-        .comparison-table {
-            max-width: 1100px;
-            margin: 60px auto 0;
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        
-        .comparison-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .comparison-table th {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            padding: 22px;
-            text-align: left;
-            font-weight: 800;
-            font-size: 1.1em;
-        }
-        
-        .comparison-table td {
-            padding: 22px;
-            border-bottom: 1px solid #e5e7eb;
-            font-size: 1.05em;
-        }
-        
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table tr:hover {
-            background: #f9fafb;
-        }
-        
-        .comparison-table .feature-name {
-            font-weight: 700;
-            color: #1f2937;
-        }
-        
-        .check-yes {
-            color: #10b981;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-        
-        .check-no {
-            color: #ef4444;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-        
-        .highlight-col {
-            background: linear-gradient(to bottom, #f0fdf4, #ffffff);
-            font-weight: 700;
         }
 
         .pricing-section {
@@ -616,38 +376,23 @@
             background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
         }
         
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 35px;
-            max-width: 1200px;
+        .pricing-card-single {
+            max-width: 600px;
             margin: 60px auto 0;
-        }
-        
-        .pricing-card {
-            background: white;
-            border-radius: 28px;
-            padding: 45px;
-            position: relative;
-            border: 3px solid #e5e7eb;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-        }
-        
-        .pricing-card.featured {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
             color: white;
-            border: none;
-            box-shadow: 0 25px 70px rgba(99,102,241,0.5);
-            transform: scale(1.05);
+            border-radius: 28px;
+            padding: 50px;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(99,102,241,0.5);
+            border: 3px solid rgba(255,255,255,0.2);
+            transform: scale(1.02);
+            animation: floatCard 3s ease-in-out infinite;
         }
 
-        .pricing-card.featured:hover {
-            transform: translateY(-10px) scale(1.08);
+        @keyframes floatCard {
+            0%, 100% { transform: scale(1.02) translateY(0); }
+            50% { transform: scale(1.02) translateY(-10px); }
         }
         
         .popular-badge {
@@ -672,74 +417,89 @@
             50% { transform: translateX(-50%) translateY(-5px); }
         }
         
-        .pricing-card h3 {
-            font-size: 1.8em;
+        .pricing-card-single h3 {
+            font-size: 2em;
             margin-bottom: 12px;
             font-weight: 800;
         }
         
-        .pricing-card .price {
-            font-size: 3.5em;
+        .pricing-card-single .price {
+            font-size: 4em;
             font-weight: 900;
             margin: 20px 0;
             display: flex;
             align-items: baseline;
             gap: 8px;
+            justify-content: center;
         }
         
-        .pricing-card .price .currency {
+        .pricing-card-single .price .currency {
             font-size: 0.5em;
             opacity: 0.8;
         }
         
-        .pricing-card .price .period {
+        .pricing-card-single .price .period {
             font-size: 0.35em;
             opacity: 0.7;
             font-weight: 700;
         }
         
         .price-detail {
-            font-size: 0.95em;
-            opacity: 0.85;
+            font-size: 1.1em;
+            opacity: 0.95;
             margin-bottom: 25px;
             font-weight: 600;
+            text-align: center;
         }
         
-        .pricing-card ul {
+        .value-props {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .value-props h4 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 800;
+            color: #fbbf24;
+        }
+        
+        .pricing-card-single ul {
             list-style: none;
             margin: 30px 0;
         }
         
-        .pricing-card li {
-            padding: 12px 0;
+        .pricing-card-single li {
+            padding: 14px 0;
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            line-height: 1.6;
-            font-size: 1em;
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: rgba(255,255,255,0.98);
         }
         
-        .pricing-card li::before {
+        .pricing-card-single li::before {
             content: '✓';
-            color: #10b981;
+            color: #fbbf24;
             font-weight: 900;
-            font-size: 1.3em;
+            font-size: 1.4em;
             flex-shrink: 0;
         }
-        
-        .pricing-card.featured li::before {
+
+        .pricing-card-single li strong {
             color: #fbbf24;
-        }
-        
-        .pricing-card.featured li {
-            color: rgba(255,255,255,0.98);
         }
         
         .pricing-cta {
             width: 100%;
-            padding: 18px;
+            padding: 20px;
             border-radius: 14px;
-            font-size: 1.1em;
+            font-size: 1.2em;
             font-weight: 800;
             border: none;
             cursor: pointer;
@@ -747,15 +507,6 @@
             margin-top: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-        
-        .pricing-card:not(.featured) .pricing-cta {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            box-shadow: 0 10px 25px rgba(99,102,241,0.4);
-        }
-        
-        .pricing-card.featured .pricing-cta {
             background: white;
             color: #6366f1;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -768,9 +519,9 @@
         
         .money-back {
             text-align: center;
-            margin-top: 15px;
-            font-size: 0.9em;
-            opacity: 0.85;
+            margin-top: 20px;
+            font-size: 1em;
+            opacity: 0.95;
             font-weight: 700;
         }
 
@@ -1135,10 +886,7 @@
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-            .pricing-cards {
+            .moat-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1202,42 +950,16 @@
                 font-size: 1.05em;
             }
 
-            .steps-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .problem-grid {
+            .moat-grid {
                 grid-template-columns: 1fr;
             }
 
-            .founder-box {
-                flex-direction: column;
-                text-align: center;
+            .pricing-card-single {
                 padding: 35px;
             }
 
-            .pricing-card {
-                margin-bottom: 25px;
-            }
-
-            .pricing-card.featured {
-                order: -1;
-                transform: scale(1);
-            }
-
-            .pricing-card.featured:hover {
-                transform: translateY(-8px) scale(1.02);
-            }
-            
-            .comparison-table {
-                overflow-x: auto;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 15px;
-                font-size: 0.95em;
+            .pricing-card-single .price {
+                font-size: 3em;
             }
             
             .footer-content {
@@ -1276,18 +998,8 @@
             .section-title {
                 font-size: 1.6em;
             }
-
-            .benefits-grid {
-                gap: 20px;
-            }
-
-            .benefit-item {
-                flex-direction: column;
-                text-align: center;
-            }
         }
 
-        /* Navigation Menu Styles */
         .nav-header {
             position: fixed;
             top: 0;
@@ -1380,7 +1092,6 @@
             display: none;
         }
 
-        /* Hamburger Menu */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -1408,7 +1119,6 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* Add spacing for fixed nav */
         body {
             padding-top: 70px;
         }
@@ -1417,11 +1127,6 @@
             top: 70px;
         }
 
-        .trust-bar {
-            margin-top: 0;
-        }
-
-        /* Mobile Navigation */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -1490,7 +1195,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Header -->
     <nav class="nav-header">
         <div class="nav-container">
             <a href="#" class="nav-logo">
@@ -1498,12 +1202,10 @@
             </a>
             
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#benefits">Benefits</a></li>
-                <li><a href="#comparison">Compare</a></li>
+                <li><a href="#moat">Why FitGenie</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#" class="nav-cta" onclick="openFreeTrial(); return false;">Get Started Free</a></li>
+                <li><a href="#" class="nav-cta" onclick="openFreeTrial(); return false;">Start Challenge</a></li>
             </ul>
 
             <div class="hamburger" id="hamburger">
@@ -1513,306 +1215,82 @@
             </div>
         </div>
     </nav>
+
     <div class="announcement-bar">
-        🎉 <span class="highlight">Launch Dhamaka</span> - First month pe ₹200 discount! Jaldi karo, limited seats! 🔥
+        🎉 <span class="highlight">Limited Time</span> - First 100 members get lifetime ₹200 OFF! 🔥
     </div>
 
     <div class="trust-bar">
         <div class="trust-item"><span>AI + Human Coaching</span></div>
-        <div class="trust-item"><span>No Gym Required</span></div>
-        <div class="trust-item"><span>30-Din Money Back</span></div>
-        <div class="trust-item"><span>Made for Indians</span></div>
+        <div class="trust-item"><span>Daily Plans</span></div>
+        <div class="trust-item"><span>Weekly Calls</span></div>
+        <div class="trust-item"><span>30-Day Money Back</span></div>
     </div>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>AI + Real Coaches = Aapka Personal Fitness Expert! ⚡💫</h1>
-            <p class="subtitle">AI technology jo aapki body ko samajhti hai + Real coaches jo aapka haath pakad ke results tak le jaate hain. Smart workout plans + Human guidance. Ghar baithe, bas 15 minute roz!</p>
+            <h1>Not a Fitness App. This is Your Consistency Challenge. 💪🔥</h1>
+            <p class="subtitle">AI that understands you + Coaches who won't let you quit. This system won't stop chasing you until fitness becomes your habit.</p>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="number">15</span>
-                    <span class="label">Min Daily</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="number">₹20</span>
+                    <span class="number">₹23</span>
                     <span class="label">Per Day</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="number">0</span>
-                    <span class="label">Equipment</span>
+                    <span class="number">7</span>
+                    <span class="label">Days Plans</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">1</span>
+                    <span class="label">Weekly Call</span>
                 </div>
             </div>
 
             <button class="cta-button-large" onclick="openFreeTrial()">
-                FREE Assessment Shuru Karo →
+                Accept the Challenge →
             </button>
 
             <div class="trust-badges">
-                <div class="trust-badge">Credit card nahi chahiye</div>
-                <div class="trust-badge">Kabhi bhi cancel karo</div>
+                <div class="trust-badge">No credit card needed</div>
+                <div class="trust-badge">Cancel anytime</div>
                 <div class="trust-badge">AI + Human power</div>
             </div>
         </div>
     </section>
 
-    <section class="founder-section">
-        <div class="container">
-            <div class="founder-box">
-                <img src="https://raw.githubusercontent.com/Adityadhadiwal/site2/main/founder-photo.jpg" 
-                     alt="Founder Photo" 
-                     class="founder-avatar" 
-                     style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 30px rgba(99,102,241,0.4); border: 4px solid white;"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="founder-avatar" style="display: none;">⚡</div>
-                <div class="founder-content">
-                    <h3>AI Technology + Human Touch ⚡💫</h3>
-                    <p class="credentials">Smart AI Planning • Real Human Coaches • Made for Indians</p>
-                    <p>Humne FitGenie isliye banaya kyunki fitness ko accessible banana tha. AI technology use karte hain jo aapki body, schedule aur goals ko analyze karke perfect workout plan banati hai. Par AI akela nahi hai - certified human coaches hain jo aapko guide karte hain, motivate karte hain, aur har step pe saath dete hain. Technology ka power + human ki care = aapka success formula! 🇮🇳</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works" id="how-it-works">
+    <section class="moat-section" id="moat">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Kaise Kaam Karta Hai</span>
-                <h2 class="section-title">Simple 3-Step Process</h2>
-                <p class="section-subtitle">Bas 2 minute mein shuru ho jao - koi complicated setup nahi</p>
+                <span class="section-label">Our Moat</span>
+                <h2 class="section-title">What Makes Us Impossible to Copy</h2>
+                <p class="section-subtitle">It's not just AI. It's not just humans. It's the combination that creates a discipline machine.</p>
             </div>
 
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>FREE Assessment Lo</h3>
-                    <p>Hamara 2-minute questionnaire bharo. Apne goals, fitness level, available time aur diet preferences batao. Completely free, credit card ki zaroorat nahi.</p>
+            <div class="moat-grid">
+                <div class="moat-card">
+                    <span class="moat-icon">🧠</span>
+                    <h3>AI That Actually Understands You</h3>
+                    <p>Our AI continuously observes your body, lifestyle, sleep, stress, schedule and goals. It's not a static PDF - it's a system that evolves every week based on YOUR behavior. Tired? Plan adjusts. Lazy? System gets strict. Consistent? Difficulty increases. The AI doesn't let you off the hook.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>AI Aapka Plan Banata Hai</h3>
-                    <p>Hamari smart AI aapki details analyze karke personalized workout aur meal timing guide banati hai. Phir real coach review karke approve karta hai. Best of both worlds - technology ki speed + human ki expertise!</p>
+                <div class="moat-card">
+                    <span class="moat-icon">👥</span>
+                    <h3>Coaches Who Make You Accountable</h3>
+                    <p>Our coaches aren't cheerleaders. They catch your excuses, break your patterns, and believe in you more than you believe in yourself. This isn't "good job" on WhatsApp. This is discipline transfer. Weekly calls ensure you can't hide.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Coach Saath Dete Hain</h3>
-                    <p>Daily 15-30 min workout ghar pe karo. AI track karta hai, coach motivate karte hain. Progress dekhte hain? AI plan adjust karta hai. Confused ho? Coach turant help karte hain. Ye hai real AI + Human coaching!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="problem-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">The Problem</span>
-                <h2 class="section-title">Traditional Fitness Kaam Kyun Nahi Karti</h2>
-                <p class="section-subtitle">Ye sab problems familiar lagte hain?</p>
-            </div>
-
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <span class="problem-icon">💸</span>
-                    <h3>Bahut Mehenga Gym</h3>
-                    <p>₹5,000-15,000/month membership ke liye. Personal trainer alag se ₹10,000+ extra. Plus enrollment fees, maintenance charges. Most log afford nahi kar sakte long-term.</p>
-                </div>
-                <div class="problem-card">
-                    <span class="problem-icon">🕐</span>
-                    <h3>Time Hi Nahi Milta</h3>
-                    <p>Long work hours, family commitments, travel time. Gym jaane aur wapas aane mein 2+ ghante khatam. Thakaan aur unsustainable hai yeh routine.</p>
-                </div>
-                <div class="problem-card">
-                    <span class="problem-icon">🥘</span>
-                    <h3>Foreign Diet Plans</h3>
-                    <p>Chicken breast, quinoa, protein shakes? Indian food culture ke saath kaam nahi karta. Roti-dal-sabzi lifestyle ke saath guidance chahiye jo realistic ho.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits-section" id="benefits">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Kyun FitGenie</span>
-                <h2 class="section-title">AI + Human = Perfect Combination</h2>
-                <p class="section-subtitle">Technology ki intelligence aur insaan ki samajh - dono milke aapko fit banate hain</p>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">🤖</div>
-                    <div class="benefit-content">
-                        <h4>Smart AI Technology</h4>
-                        <p>AI aapki body type, goals, schedule ko samajhti hai aur perfect workout plan banati hai. Har din ka plan aapke liye customize hota hai. Progress dekh ke automatically adjust hota hai!</p>
-                    </div>
+                <div class="moat-card">
+                    <span class="moat-icon">🔁</span>
+                    <h3>The Consistency Engine</h3>
+                    <p>Other apps focus on workouts, calories, transformations. We focus on DAILY ACTION. Non-negotiables. Habit pressure. Here you don't skip - either you do it, or the system asks why. This is the moat others can't replicate.</p>
                 </div>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon">👨‍🏫</div>
-                    <div class="benefit-content">
-                        <h4>Real Human Coaches</h4>
-                        <p>Certified coaches AI ke plans ko review karte hain, aapko personally guide karte hain. Doubts clear karte hain, form correct karte hain, motivate karte hain. Bot nahi, real insaan!</p>
-                    </div>
+                <div class="moat-card">
+                    <span class="moat-icon">⚡</span>
+                    <h3>Technology + Care = Pressure with Support</h3>
+                    <p>AI's power pushes you forward. Human care keeps you from breaking down. Just AI? People quit. Just humans? Doesn't scale. FitGenie combines both into a discipline machine that actually works.</p>
                 </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🇮🇳</div>
-                    <div class="benefit-content">
-                        <h4>100% Indian Focused</h4>
-                        <p>AI ko train kiya hai Indian diet, lifestyle aur challenges pe. Roti-dal-sabzi ko samajhta hai. Family dynamics aur Indian ghar ki setting - sab kuch covered hai!</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🏠</div>
-                    <div class="benefit-content">
-                        <h4>Sirf Ghar Pe Workout</h4>
-                        <p>6x6 feet jagah kaafi hai. Mumbai flat ho, PG room ho, kahin bhi. Koi equipment nahi chahiye, bas apka body weight.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">⏱️</div>
-                    <div class="benefit-content">
-                        <h4>Daily 15 Minutes</h4>
-                        <p>Chhote, effective workouts jo aapke schedule mein fit ho jaye. Morning, evening, lunch break - aapki choice. Consistency over duration.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">💰</div>
-                    <div class="benefit-content">
-                        <h4>Actually Affordable</h4>
-                        <p>₹599/month se shuru (₹20/day). Ek movie ticket se kam. Professional AI + human coaching sabke liye accessible.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">📊</div>
-                    <div class="benefit-content">
-                        <h4>AI-Powered Progress Tracking</h4>
-                        <p>AI aapki har workout track karta hai, patterns dekhta hai, aur insights deta hai. Coach ye data use karke aapko better guidance dete hain. Data + Experience = Results!</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🎯</div>
-                    <div class="benefit-content">
-                        <h4>Adaptive Smart Plans</h4>
-                        <p>Busy din tha? Travel pe ho? AI automatically plan adjust kar deta hai. Coach ensure karte hain ki realistic rahe. Technology flexibility deti hai, coach accountability dete hain.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">💬</div>
-                    <div class="benefit-content">
-                        <h4>24/7 AI + Human Support</h4>
-                        <p>Quick questions? AI turant answer deta hai. Complex issues? Human coach personally respond karte hain. Kabhi akela nahi feel karoge - hamesha koi hai help karne ko!</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🛡️</div>
-                    <div class="benefit-content">
-                        <h4>Safety Pehle</h4>
-                        <p>Injury prevention pe focus. Proper form tutorials. Sabhi fitness levels ke liye modifications. Slowly shuru karo, safely progress karo.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🌐</div>
-                    <div class="benefit-content">
-                        <h4>Simple WhatsApp Interface</h4>
-                        <p>AI-powered chatbot + human coaches - dono WhatsApp pe. Complicated apps nahi. Simple messages mein sab kuch. Kisi bhi phone pe, kam data mein.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="comparison-section" id="comparison">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Comparison</span>
-                <h2 class="section-title">FitGenie vs Doosre Options</h2>
-                <p class="section-subtitle">Dekho hum mein kya different hai</p>
-            </div>
-
-            <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th class="highlight-col">FitGenie</th>
-                            <th>Gym + Trainer</th>
-                            <th>Fitness Apps</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="feature-name">Monthly Cost</td>
-                            <td class="highlight-col"><strong>₹599-999</strong></td>
-                            <td>₹15,000+</td>
-                            <td>₹1,500-3,000</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">AI Technology</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span> Smart Plans</td>
-                            <td><span class="check-no">✗</span></td>
-                            <td><span class="check-yes">✓</span> Generic</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Human Coach Support</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span> Real Coaches</td>
-                            <td><span class="check-yes">✓</span></td>
-                            <td><span class="check-no">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">AI + Human Combo</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span> Best of Both</td>
-                            <td><span class="check-no">✗</span></td>
-                            <td><span class="check-no">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Indian Diet Focus</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span></td>
-                            <td><span class="check-no">✗</span></td>
-                            <td><span class="check-no">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Ghar Pe Kaam Karta</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span></td>
-                            <td><span class="check-no">✗</span></td>
-                            <td><span class="check-yes">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Equipment Chahiye?</td>
-                            <td class="highlight-col">Bilkul Nahi</td>
-                            <td>Saara Gym</td>
-                            <td>Kuch</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Time Kitna Lagta</td>
-                            <td class="highlight-col">15-30 min</td>
-                            <td>2+ hours (travel ke saath)</td>
-                            <td>30-60 min</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Flexibility</td>
-                            <td class="highlight-col">Kahi bhi, kabhi bhi</td>
-                            <td>Fixed timings</td>
-                            <td>Flexible</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Kabhi Bhi Cancel</td>
-                            <td class="highlight-col"><span class="check-yes">✓</span></td>
-                            <td><span class="check-no">✗</span> (Annual lock)</td>
-                            <td><span class="check-yes">✓</span></td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </section>
@@ -1820,78 +1298,43 @@
     <section class="pricing-section" id="pricing">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Pricing</span>
-                <h2 class="section-title">Simple, Honest Pricing</h2>
-                <p class="section-subtitle">Pehle free try karo, jab ready ho tab upgrade karo. Koi hidden charges nahi.</p>
+                <span class="section-label">One Simple Plan</span>
+                <h2 class="section-title">Everything You Need to Build the Habit</h2>
+                <p class="section-subtitle">No confusion. No upsells. Just one powerful plan designed to make you consistent.</p>
             </div>
 
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3>FREE Trial</h3>
-                    <div class="price">
-                        <span class="currency">₹</span>0
-                        <span class="period">/one-time</span>
-                    </div>
-                    <p class="price-detail">Pehle try karo commitment se pehle!</p>
+            <div class="pricing-card-single">
+                <div class="popular-badge">⚡ THE ONLY PLAN YOU NEED</div>
+                <h3>Complete Coaching System</h3>
+                <div class="price">
+                    <span class="currency">₹</span>699
+                    <span class="period">/month</span>
+                </div>
+                <p class="price-detail">Just ₹23/day - Less than a movie ticket for complete transformation</p>
+
+                <div class="value-props">
+                    <h4>🎯 What Makes This Irresistible</h4>
                     <ul>
-                        <li>AI-generated personalized assessment</li>
-                        <li>EK smart workout plan</li>
-                        <li>Basic meal timing guide</li>
-                        <li>Exercise demo videos</li>
-                        <li>Community access</li>
+                        <li><strong>AI creates your 7-day plan</strong> every single week - personalized to YOUR body, schedule, and progress</li>
+                        <li><strong>Weekly 1-on-1 video call</strong> with your dedicated human coach - not a bot, a real certified trainer</li>
+                        <li><strong>Daily AI check-ins</strong> that track your consistency and adjust your plan in real-time</li>
+                        <li><strong>Complete nutrition guidance</strong> for Indian diet - roti, dal, sabzi, everything you already eat</li>
+                        <li><strong>24/7 AI support</strong> for quick questions + human coach backup for complex issues</li>
+                        <li><strong>No equipment needed</strong> - designed for home, zero gym fees</li>
+                        <li><strong>Form correction videos</strong> - AI flags issues, coach reviews and corrects</li>
+                        <li><strong>Accountability system</strong> - Can't skip without explaining why to your coach</li>
+                        <li><strong>Progress tracking dashboard</strong> - See exactly how you're improving</li>
+                        <li><strong>Lifetime community access</strong> - Connect with others on the same journey</li>
                     </ul>
-                    <button class="pricing-cta" onclick="openFreeTrial()">FREE Trial Shuru Karo</button>
-                    <p class="money-back">⚠️ Credit card nahi chahiye</p>
                 </div>
 
-                <div class="pricing-card featured">
-                    <div class="popular-badge">⚡ SABSE POPULAR</div>
-                    <h3>Basic Plan</h3>
-                    <div class="price">
-                        <span class="currency">₹</span>599
-                        <span class="period">/month</span>
-                    </div>
-                    <p class="price-detail">₹20/day - Beginners ke liye best!</p>
-                    <ul>
-                        <li>AI-powered weekly workout plans</li>
-                        <li>Smart meal timing guidance</li>
-                        <li>AI chatbot + Human email support</li>
-                        <li>Automated progress tracking</li>
-                        <li>AI form analysis + video tutorials</li>
-                        <li>Exercise modifications (AI suggested)</li>
-                        <li>Monthly human coach review</li>
-                    </ul>
-                    <button class="pricing-cta" onclick="openPremiumPlan()">Basic Plan Lo</button>
-                    <p class="money-back">💯 30-Din Money Back</p>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Premium Coaching</h3>
-                    <div class="price">
-                        <span class="currency">₹</span>999
-                        <span class="period">/month</span>
-                    </div>
-                    <p class="price-detail">₹33/day - Serious results ke liye</p>
-                    <ul>
-                        <li><strong>Basic mein sab, PLUS:</strong></li>
-                        <li>Complete AI nutrition plan (Indian focus)</li>
-                        <li>Direct WhatsApp coach access (human)</li>
-                        <li>24hr human response time</li>
-                        <li>Personalized form corrections (coach reviewed)</li>
-                        <li>AI + Coach injury-specific modifications</li>
-                        <li>Smart travel & festival adaptations</li>
-                        <li>Bi-weekly video check-ins (human coach)</li>
-                        <li>AI insights + human interpretation</li>
-                        <li>Priority human support</li>
-                    </ul>
-                    <button class="pricing-cta" onclick="openPremiumPlan()">Premium Lo</button>
-                    <p class="money-back">💯 30-Din Money Back</p>
-                </div>
+                <button class="pricing-cta" onclick="openFreeTrial()">Start Your Challenge Now</button>
+                <p class="money-back">💯 30-Day Money Back Guarantee - Zero Risk</p>
             </div>
 
             <div class="guarantee-box">
                 <h4>🛡️ 100% Risk-Free Guarantee</h4>
-                <p>Premium ko 30 din try karo. Agar KISI BHI reason se satisfied nahi ho, toh hum har rupee refund kar denge. Koi sawaal nahi puchenge. Hume confidence hai ki aapko pasand aayega.</p>
+                <p>Try it for 30 days. If you're not satisfied for ANY reason, we'll refund every rupee. No questions asked. We're confident you'll love it because this system actually works when you commit to it.</p>
             </div>
         </div>
     </section>
@@ -1900,108 +1343,108 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">FAQs</span>
-                <h2 class="section-title">Common Sawal-Jawab</h2>
-                <p class="section-subtitle">Jo aapko jaanna chahiye</p>
+                <h2 class="section-title">Everything You Need to Know</h2>
+                <p class="section-subtitle">Honest answers to your questions</p>
             </div>
 
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        AI aur human coach dono kaise kaam karte hain saath mein?
+                        How do AI and human coaches work together?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        AI aapki details analyze karke daily workout plans, meal timing, aur progress tracking karta hai - ye instant hota hai aur 24/7 available hai. Human coaches ye AI-generated plans review karte hain, aapke doubts solve karte hain, form corrections dete hain, aur motivation provide karte hain. AI speed deta hai, coach personal touch deta hai. Best of both worlds!
+                        AI analyzes your data and creates your daily/weekly workout plans, meal timing, and tracks progress - this happens instantly 24/7. Your human coach reviews these AI plans, conducts weekly video calls, corrects your form, solves complex doubts, and provides motivation. AI gives speed and personalization, coach gives expertise and accountability. Best of both worlds!
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        Main complete beginner hoon. Kya yeh mere liye kaam karega?
+                        What happens in the weekly coaching call?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Bilkul! Hamare zyada tar members beginners hain. AI aapki current fitness level ko samajh ke basic exercises se shuru karti hai. Human coaches ensure karte hain ki aap proper form seekho aur safely progress karo. Koi judgement nahi, sirf consistent improvement!
+                        Every week, you get a 1-on-1 video call with your dedicated coach. They review your progress, watch your form if needed, adjust your plan based on feedback, address challenges you're facing, and set goals for the next week. It's like having a personal trainer checking in, but at a fraction of the cost. This call ensures you stay accountable and on track.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        Koi equipment chahiye kya?
+                        I'm a complete beginner. Will this work for me?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Nahi! AI saare exercises body weight use karke design karta hai. Bas aapko 6x6 feet space chahiye. Agar dumbbells ya resistance bands hain toh AI aapke plan mein unhe include kar sakti hai - par required nahi hain.
+                        Absolutely! Most of our members are beginners. The AI starts you at your current fitness level with basic exercises. Your coach ensures you learn proper form and progress safely. No judgment, just consistent improvement. The system is designed to meet you where you are and take you where you want to be.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        Kitni jaldi results dikhenge?
+                        Do I need any equipment?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Results har insaan ke liye alag hote hain. Generally, 2-3 hafte mein aap zyada energetic feel karoge. AI progress track karta hai aur body mein visible changes 2-3 mahine mein dikhte hain consistency ke saath. Yaad rakho - sustainable, healthy results time lete hain. Quick fixes kaam nahi karte.
+                        No! All exercises use bodyweight only. You just need 6x6 feet of space. If you happen to have dumbbells or resistance bands, the AI can incorporate them, but they're absolutely not required. This is designed for home workouts with zero investment in equipment.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        Main bahut busy hoon. Kya 15 minutes sach mein kaam karega?
+                        How quickly will I see results?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Haan! AI efficient workouts design karta hai jo short time mein maximum impact deti hain. Consistency duration se better hai. Roz 15 minutes, hafte mein 2 baar 1 hour se better hai. 15 min se shuru karo, jab time mile toh AI automatically plan badha degi.
+                        Results vary by person, but generally: You'll feel more energetic in 2-3 weeks. Visible body changes appear in 2-3 months with consistency. The AI tracks your progress daily, and your coach helps you celebrate small wins along the way. Remember - sustainable, healthy results take time. Quick fixes don't work. Consistency does.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        Main vegetarian hoon. Kya meal plan mere liye kaam karega?
+                        I'm very busy. Can I still do this?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Definitely! AI ko Indian vegetarian diets pe train kiya gaya hai. Dal, paneer, dahi, sabzi, fruits - jo aap pehle se khate ho usko AI optimize karegi. Regional preferences (South Indian, Gujarati, Bengali, etc.) fully covered hain.
+                        Yes! The AI designs efficient workouts that fit your available time. Start with 15-20 minutes daily. The system adapts to your schedule. Consistency matters more than duration. 15 minutes every day beats 1 hour twice a week. Your coach helps you find time slots that work for YOUR life.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        Mujhe health issues hain (BP, diabetes, PCOS). Kya main yeh kar sakta hoon?
+                        I'm vegetarian. Will the meal plan work for me?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Pehle apne doctor se zaroor consult karo! Agar unka clearance mil jaaye, toh AI condition-specific modifications provide karegi aur human coaches ensure karenge ki exercises safe hain. Kaafi members health conditions ke saath safely exercise karte hain. Aapki safety hamari top priority hai - doctor consultation kabhi skip mat karo.
+                        Definitely! Our AI is trained on Indian vegetarian diets. Dal, paneer, dahi, sabzi, fruits - the foods you already eat, optimized by AI. We cover all regional preferences (South Indian, Gujarati, Bengali, etc.). Your coach helps customize it further based on your specific needs.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        Support kaise milega? Kya koi coach se baat kar sakta hoon?
+                        I have health issues (BP, diabetes, PCOS). Can I join?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Basic members ko AI chatbot instant answers deta hai aur email pe human coaches 48 hours mein respond karte hain. Premium members ko direct WhatsApp access milta hai certified human coaches ka - 24 hours mein response guaranteed! Kabhi bhi sawaal pucho, form feedback lo, concerns share karo.
+                        Always consult your doctor first! Once you have medical clearance, the AI provides condition-specific modifications and your coach ensures exercises are safe for you. Many members exercise safely with health conditions. Your safety is our top priority - never skip the doctor consultation.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        Agar pasand nahi aaya? Refund mil sakta hai?
+                        How is this different from YouTube workout videos?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Haan! 30-din money-back guarantee hai. Agar Premium aapke liye nahi hai, toh 30 din ke andar email karo full refund ke liye. Koi sawaal nahi, koi problem nahi. Hume happy members chahiye, trapped nahi.
+                        Completely different! YouTube is generic - same content for everyone. We use AI to create plans specifically for YOU - your fitness level, goals, available time, home space, Indian diet - everything is personalized. Plus you have a real coach who calls you weekly, keeps you accountable, and won't let you quit. AI intelligence + human care = your personal fitness system!
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        YouTube workout videos se yeh kaise different hai?
+                        What if I'm not satisfied? Can I get a refund?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Bilkul different! YouTube generic hai - sabke liye same content. Hum AI use karte hain jo AAPKE liye personally plan banata hai - aapka fitness level, goals, available time, ghar ki space, Indian diet - sab consider hota hai. Plus real coaches hain jo motivate karte hain aur guide karte hain. AI ki intelligence + human ki care = aapka personal fitness system!
+                        Yes! 30-day money-back guarantee. If FitGenie isn't right for you for ANY reason, email us within 30 days for a full refund. No questions, no hassle. We want happy, committed members - not trapped ones. We're confident you'll love it, but if not, you risk nothing.
                     </div>
                 </div>
             </div>
@@ -2010,18 +1453,18 @@
 
     <section class="final-cta">
         <div class="final-cta-content">
-            <h2>Ready Ho AI + Human Coaching Ke Saath Fit Hone Ke Liye?</h2>
-            <p>Hundreds of Indians join kar rahe hain jo smart technology aur real coaches ke saath ghar pe transform ho rahe hain. No gym, no equipment, no bahane.</p>
+            <h2>Ready to Accept the Consistency Challenge?</h2>
+            <p>Join hundreds of Indians who are transforming at home with smart AI technology and real human coaching. No gym, no equipment, no excuses.</p>
 
             <button class="cta-primary" onclick="openFreeTrial()">
-                <span style="position: relative; z-index: 1;">FREE Assessment Ab Shuru Karo →</span>
+                <span style="position: relative; z-index: 1;">Start Your Challenge Now →</span>
             </button>
 
             <div style="margin-top: 30px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; opacity: 0.98; font-size: 1em;">
-                <div>✓ Credit card nahi chahiye</div>
+                <div>✓ No credit card needed</div>
                 <div>✓ 2-minute setup</div>
-                <div>✓ Kabhi bhi cancel</div>
-                <div>✓ 30-din guarantee</div>
+                <div>✓ Cancel anytime</div>
+                <div>✓ 30-day guarantee</div>
             </div>
         </div>
     </section>
@@ -2030,7 +1473,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <h3>FitGenie</h3>
-                <p>AI Technology + Real Coaches. Indians ke liye personal fitness coaching. Ghar pe fit ho jao - smart aur affordable tarike se! 🇮🇳</p>
+                <p>AI Technology + Real Coaches. Personal fitness coaching designed for Indians. Get fit at home - smart and affordable! 🇮🇳</p>
                 <div class="footer-social">
                     <a href="#" class="social-link" aria-label="Facebook">📘</a>
                     <a href="https://www.instagram.com/zeuss_ai" target="_blank" class="social-link" aria-label="Instagram">📷</a>
@@ -2064,7 +1507,7 @@
                 <ul>
                     <li><a href="https://tally.so/r/3q2WLO" target="_blank">Get in Touch</a></li>
                     <li><a href="mailto:support@fitgenie.in">support@fitgenie.in</a></li>
-                    <li>24 ghante ke andar response</li>
+                    <li>Response within 24 hours</li>
                 </ul>
             </div>
         </div>
@@ -2073,17 +1516,17 @@
             <div class="footer-disclaimer">
                 <p style="font-weight: 700; margin-bottom: 10px; color: #fbbf24;">⚠️ Important Medical Disclaimer:</p>
                 <p>
-                    FitGenie sirf general fitness information deta hai - medical advice, diagnosis, ya treatment NAHI. 
-                    Koi bhi fitness ya nutrition program shuru karne se pehle apne doctor se zaroor consult karo, khaas kar agar medical conditions, injuries hain, pregnant ho, ya medications lete ho. 
-                    Agar pain, dizziness, ya discomfort feel ho toh turant exercise band karo aur healthcare professional se consult karo. 
-                    Individual results alag hote hain consistency, genetics, lifestyle aur starting point ke basis pe. Hum specific results ki guarantee nahi dete. 
-                    Sirf 18+ users ke liye. Hamari service use karke, aap in disclaimers ko acknowledge karte ho.
+                    FitGenie provides general fitness information only - NOT medical advice, diagnosis, or treatment. 
+                    Always consult your doctor before starting any fitness or nutrition program, especially if you have medical conditions, injuries, are pregnant, or take medications. 
+                    Stop exercise immediately and consult a healthcare professional if you experience pain, dizziness, or discomfort. 
+                    Individual results vary based on consistency, genetics, lifestyle, and starting point. We do not guarantee specific results. 
+                    For users 18+ only. By using our service, you acknowledge these disclaimers.
                 </p>
             </div>
 
             <p style="margin-top: 30px; font-size: 1em;">
                 © 2024 FitGenie. Made in India with ❤️<br>
-                AI + Human coaching se Indians ko ghar pe fit karna hamara mission hai.
+                Our mission: Help Indians get fit at home with AI + Human coaching.
             </p>
         </div>
     </footer>
@@ -2091,35 +1534,21 @@
     <div class="floating-whatsapp" onclick="openContact()" aria-label="Start chat"></div>
 
     <div class="sticky-cta-mobile">
-        <button onclick="openFreeTrial()">FREE Assessment Shuru Karo →</button>
+        <button onclick="openFreeTrial()">Start Your Challenge →</button>
     </div>
 
     <script>
-        // Open Free Trial Form (for free trial clicks)
         function openFreeTrial() {
             window.open('https://tally.so/r/mV2dNa', '_blank');
             
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'free_trial_click', {
+                gtag('event', 'challenge_start_click', {
                     'event_category': 'engagement',
-                    'event_label': 'free_trial_form'
+                    'event_label': 'challenge_form'
                 });
             }
         }
 
-        // Open Premium/Contact Form (for premium plan and contact clicks)
-        function openPremiumPlan() {
-            window.open('https://tally.so/r/3q2WLO', '_blank');
-            
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'premium_plan_click', {
-                    'event_category': 'conversion',
-                    'event_label': 'premium_form'
-                });
-            }
-        }
-
-        // Open Contact Form (for WhatsApp button and general contact)
         function openContact() {
             window.open('https://tally.so/r/3q2WLO', '_blank');
             
@@ -2131,12 +1560,10 @@
             }
         }
 
-        // FAQ Toggle with smooth animation
         function toggleFAQ(element) {
             const faqItem = element.parentElement;
             const isActive = faqItem.classList.contains('active');
             
-            // Close all other FAQs for better UX
             document.querySelectorAll('.faq-item').forEach(item => {
                 if (item !== faqItem) {
                     item.classList.remove('active');
@@ -2157,7 +1584,6 @@
             }
         }
 
-        // Smooth Scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
@@ -2174,7 +1600,6 @@
             });
         });
 
-        // Show/Hide sticky mobile CTA on scroll with animation
         const stickyCTA = document.querySelector('.sticky-cta-mobile');
         let lastScroll = 0;
         
@@ -2184,7 +1609,6 @@
                 
                 if (currentScroll > 500) {
                     if (currentScroll > lastScroll) {
-                        // Scrolling down
                         stickyCTA.style.transform = 'translateY(0)';
                     }
                 } else {
@@ -2195,9 +1619,7 @@
             }
         });
 
-        // Analytics tracking
         if (typeof gtag !== 'undefined') {
-            // Track scroll depth
             let scrollTracked = { 25: false, 50: false, 75: false, 100: false };
 
             window.addEventListener('scroll', function() {
@@ -2214,7 +1636,6 @@
                 });
             });
 
-            // Track all CTA button clicks
             document.querySelectorAll('.cta-primary, .pricing-cta, .cta-button-large').forEach(button => {
                 button.addEventListener('click', function() {
                     gtag('event', 'cta_clicked', {
@@ -2224,7 +1645,6 @@
                 });
             });
 
-            // Track pricing section visibility
             const pricingSection = document.querySelector('.pricing-section');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -2237,98 +1657,3 @@
                     }
                 });
             }, { threshold: 0.5 });
-            
-            if (pricingSection) {
-                observer.observe(pricingSection);
-            }
-
-            // Page view
-            gtag('event', 'page_view', {
-                'page_title': 'FitGenie - AI + Human Coaching',
-                'page_location': window.location.href
-            });
-        }
-
-        // Add entrance animations on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.step-card, .problem-card, .benefit-item, .pricing-card');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }, index * 100);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            elements.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        };
-
-        // Initialize animations when page loads
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', animateOnScroll);
-        } else {
-            animateOnScroll();
-        }
-
-        // Prevent form submission on Enter key in the page
-        document.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
-                e.preventDefault();
-            }
-        });
-
-        // Hamburger Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
-
-        // Hide/Show navigation on scroll
-        let lastScrollTop = 0;
-        const navHeader = document.querySelector('.nav-header');
-        
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down
-                navHeader.style.transform = 'translateY(-100%)';
-            } else {
-                // Scrolling up
-                navHeader.style.transform = 'translateY(0)';
-            }
-            
-            lastScrollTop = scrollTop;
-        });
-    </script>
-</body>
-</html>
