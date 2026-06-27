@@ -159,6 +159,35 @@
             animation: fadeInUp 0.8s ease-out backwards;
         }
 
+        /* Secondary CTA */
+        .cta-secondary {
+        display: inline-block;
+        margin-top: 12px;
+        font-size: 1em;
+        font-weight: 600;
+        color: white;
+        opacity: 0.85;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        }
+        
+        .cta-secondary:hover {
+        opacity: 1;
+        transform: translateY(2px);
+        }
+        
+        /* Smooth scroll offset fix (nav overlap) */
+        section {
+        scroll-margin-top: 100px;
+        }
+        
+        /* Pricing highlight entrance */
+        .pricing-card-single {
+        animation: fadeInUp 0.8s ease-out;
+        }
+
+
+
         .hero-stat:nth-child(1) { animation-delay: 0.2s; }
         .hero-stat:nth-child(2) { animation-delay: 0.3s; }
         .hero-stat:nth-child(3) { animation-delay: 0.4s; }
@@ -1205,7 +1234,8 @@
                 <li><a href="#moat">Why FitGenie</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#" class="nav-cta" onclick="openFreeTrial(); return false;">Start Challenge</a></li>
+               <li><a href="#pricing" class="nav-cta">View Plan</a></li>
+
             </ul>
 
             <div class="hamburger" id="hamburger">
@@ -1228,36 +1258,56 @@
     </div>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Not a Fitness App. This is Your Consistency Challenge. 💪🔥</h1>
-            <p class="subtitle">AI that understands you + Coaches who won't let you quit. This system won't stop chasing you until fitness becomes your habit.</p>
-            
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="number">Hyper-personalization</span>
-                    <span class="label">AI</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="number">Certified</span>
-                    <span class="label">Human Coach</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="number">No Fix Pay</span>
-                    <span class="label"></span>
-                </div>
-            </div>
+    <div class="hero-content">
+        <h1>Not a Fitness App. This is Your Consistency System. 💪🔥</h1>
+        <p class="subtitle">
+            AI that adapts to your life + coaches who won’t let you disappear.  
+            This system keeps adjusting until consistency becomes automatic.
+        </p>
 
-            <button class="cta-button-large" onclick="openFreeTrial()">
-                Accept the Challenge →
-            </button>
-
-            <div class="trust-badges">
-                <div class="trust-badge">No credit card needed</div>
-                <div class="trust-badge">Cancel anytime</div>
-                <div class="trust-badge">AI + Human power</div>
-            </div>
+```
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <span class="number">Adaptive</span>
+            <span class="label">AI System</span>
         </div>
-    </section>
+        <div class="hero-stat">
+            <span class="number">Real</span>
+            <span class="label">Human Coaches</span>
+        </div>
+        <div class="hero-stat">
+            <span class="number">Pay</span>
+            <span class="label">What Feels Fair</span>
+        </div>
+    </div>
+
+    <!-- PRIMARY CTA (SCROLL FIRST) -->
+    <a href="#pricing" class="cta-button-large">
+        See How It Works ↓
+    </a>
+
+    <!-- SECONDARY MICRO TRUST -->
+    <p style="margin-top:12px; font-size:0.9em; opacity:0.85;">
+        Takes 30 seconds. No commitment.
+    </p>
+
+    <div class="trust-badges">
+        <div class="trust-badge">No credit card needed</div>
+        <div class="trust-badge">Cancel anytime</div>
+        <div class="trust-badge">AI + Human system</div>
+    </div>
+</div>
+  <button class="pricing-cta" onclick="openFreeTrial()">
+    Start Your 7-Day Free Trial →
+</button>
+
+<p class="money-back">
+    No risk. Pay only if you feel it's worth it 😊
+</p>
+
+
+</section>
+
 
     <section class="moat-section" id="moat">
         <div class="container">
